@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022 | hollow</title>
+  <title>js01 | hollow</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hollow">
-<meta property="og:url" content="http://example.com/archives/2022/index.html">
+  <meta name="description" content="js进阶Day01今天目标  1.了解API的概念，知道API需要学习什么 2.掌握多种获取元素的方法 3.掌握注册事件的固定用法，知道什么时候使用事件 4.掌握多种操作元素样式的方法  JavaScript组成ECMAScript : 规范，规定了js的基本语法和功能   DOM ： document object model  文档对象模型，浏览器提供的一套操作元素的API BOM ： bro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js01">
+<meta property="og:url" content="http://example.com/2022/09/19/js01/index.html">
 <meta property="og:site_name" content="hollow">
+<meta property="og:description" content="js进阶Day01今天目标  1.了解API的概念，知道API需要学习什么 2.掌握多种获取元素的方法 3.掌握注册事件的固定用法，知道什么时候使用事件 4.掌握多种操作元素样式的方法  JavaScript组成ECMAScript : 规范，规定了js的基本语法和功能   DOM ： document object model  文档对象模型，浏览器提供的一套操作元素的API BOM ： bro">
 <meta property="og:locale">
+<meta property="article:published_time" content="2022-09-19T05:49:33.000Z">
+<meta property="article:modified_time" content="2022-09-19T14:53:30.794Z">
 <meta property="article:author" content="hollow">
 <meta name="twitter:card" content="summary">
   
@@ -151,383 +155,224 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="photo-js01" class="article article-type-photo " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js01
+    </h1>
+  
+
+        
+        <a href="/2022/09/19/js01/" class="archive-article-date">
+  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="js进阶Day01"><a href="#js进阶Day01" class="headerlink" title="js进阶Day01"></a>js进阶Day01</h1><p>今天目标</p>
+<blockquote>
+<p>1.了解API的概念，知道API需要学习什么</p>
+<p>2.掌握多种获取元素的方法</p>
+<p>3.掌握注册事件的固定用法，知道什么时候使用事件</p>
+<p>4.掌握多种操作元素样式的方法</p>
+</blockquote>
+<h2 id="JavaScript组成"><a href="#JavaScript组成" class="headerlink" title="JavaScript组成"></a>JavaScript组成</h2><p>ECMAScript : 规范，规定了js的基本语法和功能  </p>
+<p>DOM ： document object model  文档对象模型，浏览器提供的一套操作元素的API</p>
+<p>BOM ： browser object model  浏览器对象模型，浏览器提供的一套操作浏览器功能的API</p>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>API ： application programing interface  应用程序编程接口 </p>
+<p>—— 别人已经写好的一套代码，多以对象的形式存在，我们要学习这些对象的属性的方法，结合自己的思路，完成效果</p>
+<p>WebAPI : 浏览器里面专有的API  ，就是DOM+BOM</p>
+<h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><p>document —— 整个页面，把整个页面看成一个对象，使用对象把页面里面的所有东西管理起来</p>
+<h3 id="dom体验"><a href="#dom体验" class="headerlink" title="dom体验"></a>dom体验</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;打我&quot;</span> <span class="attr">id</span>=<span class="string">&quot;btn&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">	<span class="keyword">var</span> btn = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;btn&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">  btn.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">alert</span>(<span class="string">&#x27;哎呀，真疼~~&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>我们在dom里面通常就是做这样的三件事：</p>
+<ol>
+<li>获取元素   ——  document.getElementById</li>
+<li>注册事件   ——  元素对象.onclick &#x3D; function</li>
+<li>实现效果   ——  alert()</li>
+</ol>
+<h2 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h2><h3 id="根据id获取元素"><a href="#根据id获取元素" class="headerlink" title="根据id获取元素"></a>根据id获取元素</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(对应元素的id)</span><br><span class="line">返回 一个 元素对象 或者 <span class="literal">null</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="根据标签名获取元素"><a href="#根据标签名获取元素" class="headerlink" title="根据标签名获取元素"></a>根据标签名获取元素</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>(对应元素的标签名)</span><br><span class="line"></span><br><span class="line">返回一个伪数组</span><br><span class="line"></span><br><span class="line">注意： 无论页面上满足条件的元素有多少个，都是返回伪数组，必须把里面的元素使用索引取出来才能操作</span><br><span class="line"></span><br><span class="line">例如：</span><br><span class="line"><span class="keyword">var</span> divs = <span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>(<span class="string">&#x27;div&#x27;</span>);</span><br><span class="line">divs[<span class="number">0</span>].<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="根据类名获取元素"><a href="#根据类名获取元素" class="headerlink" title="根据类名获取元素"></a>根据类名获取元素</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementsByClassName</span>(对应元素的<span class="keyword">class</span>)</span><br><span class="line"></span><br><span class="line">返回一个伪数组</span><br><span class="line"></span><br><span class="line">注意： 无论页面上满足条件的元素有多少个，都是返回伪数组，必须把里面的元素使用索引取出来才能操作</span><br><span class="line"></span><br><span class="line">例如：</span><br><span class="line"><span class="keyword">var</span> boxs = <span class="variable language_">document</span>.<span class="title function_">getElementsBClassName</span>(<span class="string">&#x27;box&#x27;</span>);</span><br><span class="line">boxs[<span class="number">0</span>].<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>根据标签名获取的伪数组和根据类名获取的伪数组是不同的伪数组</p>
+</blockquote>
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p>事件通常是浏览器里面的交互瞬间，比如我们点下的瞬间</p>
+<p>也就是说事件的功能之一是处理浏览器和用户的交互</p>
+<h3 id="注册事件"><a href="#注册事件" class="headerlink" title="注册事件"></a>注册事件</h3><p>要使用事件处理交互，需要先注册事件</p>
+<p>固定格式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">事件源.<span class="property">on</span>事件类型 = 事件处理程序</span><br><span class="line">翻译过来可以看成</span><br><span class="line"></span><br><span class="line">元素对象.<span class="property">on</span>操作 = <span class="keyword">function</span>(<span class="params"></span>)&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>事件源、事件类型、事件处理程序，并称为   事件三要素</p>
+</blockquote>
+<h2 id="操作元素对象的属性"><a href="#操作元素对象的属性" class="headerlink" title="操作元素对象的属性"></a>操作元素对象的属性</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">元素对象.属性 = 新值</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> div = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;box&#x27;</span>)</span><br><span class="line">div.<span class="property">id</span> = <span class="string">&#x27;abc&#x27;</span></span><br><span class="line">div.<span class="property">title</span> = <span class="string">&#x27;这是一个div&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>就可以在开发者工具的element工具里面看到效果</p>
+<h2 id="控制元素的样式"><a href="#控制元素的样式" class="headerlink" title="控制元素的样式"></a>控制元素的样式</h2><h3 id="通过控制style属性控制样式"><a href="#通过控制style属性控制样式" class="headerlink" title="通过控制style属性控制样式"></a>通过控制style属性控制样式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">元素对象.<span class="property">style</span>.<span class="property">css</span>样式属性 = 新值;</span><br><span class="line"></span><br><span class="line">例如：</span><br><span class="line"><span class="keyword">var</span> div = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;box&#x27;</span>)</span><br><span class="line">div.<span class="property">style</span>.<span class="property">width</span> = <span class="number">100</span> + <span class="string">&#x27;px&#x27;</span></span><br><span class="line">div.<span class="property">style</span>.<span class="property">height</span> = <span class="number">100</span> + <span class="string">&#x27;px&#x27;</span></span><br><span class="line">div.<span class="property">style</span>.<span class="property">backgroundColor</span> = <span class="string">&#x27;red&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这个方式操作的是元素的行内属性，可以获取，也可以设置</p>
+</blockquote>
+<h3 id="通过控制className控制样式"><a href="#通过控制className控制样式" class="headerlink" title="通过控制className控制样式"></a>通过控制className控制样式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">元素对象.<span class="property">className</span> = 新的类名</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> div = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;box&#x27;</span>)</span><br><span class="line">div.<span class="property">className</span> = <span class="string">&#x27;red&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="通过控制class属性控制样式"><a href="#通过控制class属性控制样式" class="headerlink" title="通过控制class属性控制样式"></a>通过控制class属性控制样式</h3><p>className的方式虽然可以控制样式，但是如果需要保留旧的样式会比较麻烦，所以有一个h5新增的方式操作</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">添加类名</span><br><span class="line">元素对象.<span class="property">classList</span>.<span class="title function_">add</span>(类名)</span><br><span class="line"><span class="keyword">var</span> div = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;box&#x27;</span>)</span><br><span class="line">div.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;red&#x27;</span>)</span><br><span class="line"></span><br><span class="line">删除类名</span><br><span class="line">元素.<span class="property">classList</span>.<span class="title function_">remove</span>(类名)</span><br><span class="line">div.<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;red&#x27;</span>)</span><br><span class="line"></span><br><span class="line">切换类名</span><br><span class="line">元素.<span class="property">classList</span>.<span class="title function_">toggle</span>(类名)</span><br><span class="line">div.<span class="property">classList</span>.<span class="title function_">toggle</span>(<span class="string">&#x27;red&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>没有了~<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Echars/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Echars/">echars</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Vue02/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Vue02/">Vue生命周期函数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Vue框架//" class="article-tag-list-link color1">Vue框架</a>
+        			<a href="/categories/js部分//" class="article-tag-list-link color5">js部分</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Vue03/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2022/09/19/js02/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          js02
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/09/19/js03/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js03</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Vue03/">Vue脚手架</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Vue框架//" class="article-tag-list-link color1">Vue框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Vue04/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Vue04/">Vuex</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Vue框架//" class="article-tag-list-link color1">Vue框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/git/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/git/">git语句</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Vue06/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Vue06/">Vue数据请求</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Vue框架//" class="article-tag-list-link color1">Vue框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/jq01/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/jq01/">jq01</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/jq部分//" class="article-tag-list-link color5">jq部分</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Vue05/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Vue05/">Vue路由</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Vue框架//" class="article-tag-list-link color1">Vue框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/jq02/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/jq02/">js02</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/jq部分//" class="article-tag-list-link color5">jq部分</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/jq03/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/jq03/">js03</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/jq部分//" class="article-tag-list-link color5">jq部分</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2022/page/2/">2</a><a class="page-number" href="/archives/2022/page/3/">3</a><a class="extend next" rel="next" href="/archives/2022/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -551,8 +396,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

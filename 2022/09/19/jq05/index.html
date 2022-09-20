@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022 | hollow</title>
+  <title>js05 | hollow</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hollow">
-<meta property="og:url" content="http://example.com/archives/2022/index.html">
+  <meta name="description" content="今天的目标1.使用Bootstrap实现响应式站点 2.掌握less的使用 3.了解WEUI的使用 WEUIjQuery WeUI 是专为微信公众账号开发而设计的一个简洁而强大的UI库，包含全部WeUI官方的CSS组件，并且额外提供了大量的拓展组件，丰富的组件库可以极大减少前端开发时间。 jQuery WeUI 的最大特点是它只提供UI组件，并不会对项目所使用的框架和其他库有任何的限制，几乎可以在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js05">
+<meta property="og:url" content="http://example.com/2022/09/19/jq05/index.html">
 <meta property="og:site_name" content="hollow">
+<meta property="og:description" content="今天的目标1.使用Bootstrap实现响应式站点 2.掌握less的使用 3.了解WEUI的使用 WEUIjQuery WeUI 是专为微信公众账号开发而设计的一个简洁而强大的UI库，包含全部WeUI官方的CSS组件，并且额外提供了大量的拓展组件，丰富的组件库可以极大减少前端开发时间。 jQuery WeUI 的最大特点是它只提供UI组件，并不会对项目所使用的框架和其他库有任何的限制，几乎可以在">
 <meta property="og:locale">
+<meta property="article:published_time" content="2022-09-19T05:49:33.000Z">
+<meta property="article:modified_time" content="2022-09-19T14:53:02.940Z">
 <meta property="article:author" content="hollow">
 <meta name="twitter:card" content="summary">
   
@@ -151,243 +155,98 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="photo-jq05" class="article article-type-photo " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js05
+    </h1>
+  
+
+        
+        <a href="/2022/09/19/jq05/" class="archive-article-date">
+  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="今天的目标"><a href="#今天的目标" class="headerlink" title="今天的目标"></a>今天的目标</h2><p>1.使用Bootstrap实现响应式站点</p>
+<p>2.掌握less的使用</p>
+<p>3.了解WEUI的使用</p>
+<h2 id="WEUI"><a href="#WEUI" class="headerlink" title="WEUI"></a>WEUI</h2><p>jQuery WeUI 是专为微信公众账号开发而设计的一个简洁而强大的UI库，包含全部WeUI官方的CSS组件，并且额外提供了大量的拓展组件，丰富的组件库可以极大减少前端开发时间。</p>
+<p>jQuery WeUI 的最大特点是它只提供UI组件，并不会对项目所使用的框架和其他库有任何的限制，几乎可以在任何环境下使用。无论你的项目是基于jQuery，还是 React, Angular, Vue， 你都会发现 jQuery WeUI 能非常方便的和他们结合使用。既是你的项目是一个有很悠久历史的老项目，也几乎可以做到拿来即用。</p>
+<p>jQuery WeUI 提供了总共<strong>30+</strong> 个非常实用的组件：列表，表单，卡片，对话框，下拉刷新等。</p>
+<h3 id="页面基本模板"><a href="#页面基本模板" class="headerlink" title="页面基本模板"></a>页面基本模板</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>jQuery WeUI<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1, user-scalable=no&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;./lib/cssreset.css&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;./lib/weui.min.css&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;./lib/jquery-weui.css&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;./lib/fontrem.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">ontouchstart</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./lib/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./lib/fastclick.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    $(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="title class_">FastClick</span>.<span class="title function_">attach</span>(<span class="variable language_">document</span>.<span class="property">body</span>);</span></span><br><span class="line"><span class="language-javascript">    &#125;);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./lib/jquery-weui.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./lib/swiper.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这里注意：</p>
+<p>1、给body标签加 <code>ontouchstart</code> 属性，这个操作是进行手机端兼容处理的，防止伪类:active失效。</p>
+<p>2、fastclick用于解决移动端300ms的延迟，如果用不上可删除。</p>
+<p>3、引入的 <code>cssreset.css</code> 与 <code>fontrem.css</code> 两个插件，都是专为移动端开发设定的，以后同学们可以直接拿去用。</p>
+<h3 id="完成项目"><a href="#完成项目" class="headerlink" title="完成项目"></a>完成项目</h3><p>项目地址：<a target="_blank" rel="noopener" href="http://codesohigh.com/weui">http://codesohigh.com/weui</a></p>
+<h3 id="WEUI之幻灯片"><a href="#WEUI之幻灯片" class="headerlink" title="WEUI之幻灯片"></a>WEUI之幻灯片</h3><p>WEUI框架中的幻灯片，就是焦点图，调用的是Swiper这个框架。框架文档：</p>
+<p><a target="_blank" rel="noopener" href="https://www.swiper.com.cn/usage/index.html">https://www.swiper.com.cn/usage/index.html</a></p>
+<h2 id="less"><a href="#less" class="headerlink" title="less"></a>less</h2><p>less是一种css 的预处理语言，简化了css的书写，增强了css的功能，赋予css动态语言的特点，是css的升级版。</p>
+<p>说白了，<strong>less就是让我们更好地书写和维护css代码</strong>。但是，写完less之后要把它编译成css，浏览器才能认识它。</p>
+<p>所以，我们需要一款考拉工具，来把我们写好的less文件编译成css文件。</p>
+<p>解压老师提供的考拉压缩包  koala_2.0.4_portable.zip   就可以使用了。</p>
+<p>LESS官网：<a target="_blank" rel="noopener" href="http://lesscss.org/">http://lesscss.org/</a></p>
+<p>LESS中文网 ：</p>
+<p><a target="_blank" rel="noopener" href="http://www.lesscss.cn/">http://www.lesscss.cn/</a></p>
+<p><a target="_blank" rel="noopener" href="https://less.bootcss.com/">https://less.bootcss.com/</a></p>
+<p><strong>体验less</strong>	</p>
+<p>​	1、新建html文件，书写结构代码</p>
+<p>​	2、新建less文件夹，在里面新建less文件，书写less语法(可以先书写css代码)</p>
+<p>​	3、打开考拉工具，将<strong>less文件夹</strong>拖拽到考拉工具主界面，考拉就会自动编译less成为css文件，此时与less同目录下会生成css文件夹，里面就是编译好的css文件</p>
+<p>​	4、在html中引入编译好的css文件，就可以查看页面效果。</p>
+<p>​	5、后面的开发中，只需要书写html结构代码和less代码就可以了。</p>
+<h4 id="less变量"><a href="#less变量" class="headerlink" title="less变量"></a>less变量</h4><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//变量的定义</span></span><br><span class="line"><span class="variable">@base-color:</span> pink;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">40px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="variable">@base-color</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">button</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">60px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">30px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="variable">@base-color</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="less嵌套"><a href="#less嵌套" class="headerlink" title="less嵌套"></a>less嵌套</h4><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">40px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="variable">@base-color</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//嵌套的写法</span></span><br><span class="line">  <span class="selector-tag">a</span>&#123;</span><br><span class="line">      <span class="attribute">color</span>:blue;</span><br><span class="line">      <span class="selector-tag">&amp;</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">        <span class="attribute">color</span>:red;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">ul</span>&#123;</span><br><span class="line">    <span class="selector-tag">li</span>&#123;</span><br><span class="line">        <span class="attribute">background</span>: <span class="number">#ccc</span>;</span><br><span class="line">        <span class="selector-tag">&amp;</span><span class="selector-class">.last</span>&#123;</span><br><span class="line">          <span class="attribute">background-color</span>: pink;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="less运算"><a href="#less运算" class="headerlink" title="less运算"></a>less运算</h4><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@w:</span><span class="number">300px</span>;</span><br><span class="line"><span class="variable">@color1:</span>green;</span><br><span class="line"><span class="variable">@color2:</span>red;</span><br><span class="line"></span><br><span class="line"><span class="comment">//制作一个高永远是宽度一半的盒子</span></span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">  <span class="comment">//width: @w - 100;//可以</span></span><br><span class="line">  <span class="comment">//width: @w - 200px ;//可以</span></span><br><span class="line">  <span class="attribute">width</span>: <span class="variable">@w</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="variable">@w</span>/<span class="number">2</span>;</span><br><span class="line">  <span class="comment">//background-color: @color1 + @color2;  //可以</span></span><br><span class="line">  <span class="comment">//background-color: @color1 + 15; // 可以</span></span><br><span class="line">  <span class="comment">//background-color: @color1 + yellow; // 不可以</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="less混合"><a href="#less混合" class="headerlink" title="less混合"></a>less混合</h4><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@w:</span><span class="number">300px</span>;</span><br><span class="line"><span class="variable">@color1:</span>green;</span><br><span class="line"><span class="variable">@color2:</span>red;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.shitihua</span>(<span class="variable">@w</span>,<span class="variable">@h</span>,<span class="variable">@bg</span>)&#123;</span><br><span class="line">  <span class="attribute">width</span>:<span class="variable">@w</span>;</span><br><span class="line">  <span class="attribute">height</span>:<span class="variable">@h</span>;</span><br><span class="line">  <span class="attribute">background</span>:<span class="variable">@bg</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//制作一个高永远是宽度一半的盒子</span></span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="variable">@w</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="variable">@w</span>/<span class="number">2</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="variable">@color1</span> + <span class="number">15</span>; </span><br><span class="line"></span><br><span class="line">  <span class="selector-tag">p</span>&#123;</span><br><span class="line">    <span class="selector-class">.shitihua</span>(<span class="number">100px</span>, <span class="number">100px</span>, red)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">span</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="selector-class">.shitihua</span>(<span class="number">300px</span>, <span class="number">300px</span>, orange)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="less内置函数（仅作了解）"><a href="#less内置函数（仅作了解）" class="headerlink" title="less内置函数（仅作了解）"></a>less内置函数（仅作了解）</h4><p>less提供了一写内置函数供我们使用：(这些函数是来控制属性值和变化量的)</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">saturate</span>(<span class="variable">@color</span>, <span class="number">10%</span>); <span class="comment">// 饱和度增加 10%</span></span><br><span class="line"><span class="selector-tag">desaturate</span>(<span class="variable">@color</span>, <span class="number">10%</span>); <span class="comment">// 饱和度降低 10%</span></span><br><span class="line"><span class="selector-tag">lighten</span>(<span class="variable">@color</span>, <span class="number">10%</span>); <span class="comment">// 亮度增加 10%</span></span><br><span class="line"><span class="selector-tag">darken</span>(<span class="variable">@color</span>, <span class="number">10%</span>); <span class="comment">// 亮度降低 10%</span></span><br><span class="line"><span class="selector-tag">fadein</span>(<span class="variable">@color</span>, <span class="number">10%</span>); <span class="comment">// 透明度增加 10%</span></span><br><span class="line"><span class="selector-tag">fadeout</span>(<span class="variable">@color</span>, <span class="number">10%</span>); <span class="comment">// 透明度降低 10%</span></span><br><span class="line"><span class="selector-tag">fade</span>(<span class="variable">@color</span>, <span class="number">50%</span>); <span class="comment">// 设定透明度为 50%</span></span><br><span class="line"><span class="selector-tag">spin</span>(<span class="variable">@color</span>, <span class="number">10</span>); <span class="comment">// 色相值增加 10</span></span><br></pre></td></tr></table></figure>
+
+<p>例如：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span>&#123;</span><br><span class="line">    <span class="attribute">background</span>:<span class="number">#f10180</span>;</span><br><span class="line">    <span class="selector-tag">&amp;</span><span class="selector-pseudo">:hover</span>&#123; <span class="attribute">background</span>:<span class="built_in">lighten</span>(<span class="number">#f10180</span>,<span class="number">10%</span>);&#125;<span class="comment">/*背景亮度增加10%*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>没有了~<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Echars/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Echars/">echars</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Vue02/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Vue02/">Vue生命周期函数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Vue框架//" class="article-tag-list-link color1">Vue框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Vue03/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Vue03/">Vue脚手架</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Vue框架//" class="article-tag-list-link color1">Vue框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Vue04/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Vue04/">Vuex</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Vue框架//" class="article-tag-list-link color1">Vue框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/git/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/git/">git语句</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Vue06/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Vue06/">Vue数据请求</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Vue框架//" class="article-tag-list-link color1">Vue框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/jq01/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/jq01/">jq01</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -400,134 +259,61 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Vue05/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2022/09/19/jq04/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          js04
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/09/19/js02/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js02</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Vue05/">Vue路由</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Vue框架//" class="article-tag-list-link color1">Vue框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/jq02/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/jq02/">js02</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/jq部分//" class="article-tag-list-link color5">jq部分</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/jq03/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/jq03/">js03</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/jq部分//" class="article-tag-list-link color5">jq部分</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2022/page/2/">2</a><a class="page-number" href="/archives/2022/page/3/">3</a><a class="extend next" rel="next" href="/archives/2022/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -551,8 +337,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

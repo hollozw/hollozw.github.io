@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022 | hollow</title>
+  <title>js04 | hollow</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hollow">
-<meta property="og:url" content="http://example.com/archives/2022/index.html">
+  <meta name="description" content="Web API 今日学习内容  事件详解  BOM的概念  window对象  对话框  onload和onunload事件  定时器  setTimeout()和clearTimeout() setInterval()和clearInterval()    今日学习目标  事件详解  掌握注册事件和移出事件 熟悉事件的三个阶段 掌握阻止事件冒泡   了解BOM的概念  熟悉window对象  了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js04">
+<meta property="og:url" content="http://example.com/2022/09/19/js04/index.html">
 <meta property="og:site_name" content="hollow">
+<meta property="og:description" content="Web API 今日学习内容  事件详解  BOM的概念  window对象  对话框  onload和onunload事件  定时器  setTimeout()和clearTimeout() setInterval()和clearInterval()    今日学习目标  事件详解  掌握注册事件和移出事件 熟悉事件的三个阶段 掌握阻止事件冒泡   了解BOM的概念  熟悉window对象  了">
 <meta property="og:locale">
+<meta property="og:image" content="http://example.com/images/%E6%8D%95%E8%8E%B7%E9%98%B6%E6%AE%B5.png">
+<meta property="og:image" content="http://example.com/images/%E5%86%92%E6%B3%A1%E9%98%B6%E6%AE%B5.png">
+<meta property="article:published_time" content="2022-09-19T05:49:33.000Z">
+<meta property="article:modified_time" content="2022-09-19T14:53:37.992Z">
 <meta property="article:author" content="hollow">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/%E6%8D%95%E8%8E%B7%E9%98%B6%E6%AE%B5.png">
   
     <link rel="alternative" href="/atom.xml" title="hollow" type="application/atom+xml">
   
@@ -151,383 +158,239 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="photo-js04" class="article article-type-photo " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js04
+    </h1>
+  
+
+        
+        <a href="/2022/09/19/js04/" class="archive-article-date">
+  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Web-API"><a href="#Web-API" class="headerlink" title="Web API"></a>Web API</h1><hr>
+<p>今日学习内容</p>
+<ul>
+<li><p>事件详解</p>
+</li>
+<li><p>BOM的概念</p>
+</li>
+<li><p>window对象</p>
+</li>
+<li><p>对话框</p>
+</li>
+<li><p>onload和onunload事件</p>
+</li>
+<li><p>定时器</p>
+<ul>
+<li>setTimeout()和clearTimeout()</li>
+<li>setInterval()和clearInterval()</li>
+</ul>
+</li>
+</ul>
+<p>今日学习目标</p>
+<ul>
+<li><p>事件详解</p>
+<ul>
+<li><strong>掌握注册事件和移出事件</strong></li>
+<li>熟悉事件的三个阶段</li>
+<li><strong>掌握阻止事件冒泡</strong></li>
+</ul>
+</li>
+<li><p>了解BOM的概念</p>
+</li>
+<li><p>熟悉window对象</p>
+</li>
+<li><p>了解对话框</p>
+</li>
+<li><p><strong>掌握定时器的使用</strong></p>
+</li>
+</ul>
+<hr>
+<h2 id="事件详解"><a href="#事件详解" class="headerlink" title="事件详解"></a>事件详解</h2><h3 id="注册事件的三种方式（掌握）"><a href="#注册事件的三种方式（掌握）" class="headerlink" title="注册事件的三种方式（掌握）"></a>注册事件的三种方式（掌握）</h3><p>这节课开始，我们来深入学习事件。首先，回顾以前注册事件的做法，在团队开发中，当一个按钮要被多个用户使用时，多个用户可能会对一个按钮进行事件注册，此时每个用户都的代码都写在了 js 文件中，当引入多个js文件时，后面引入的js会覆盖掉前面引入的js的对按钮的操作。即前面引入的js中的注册事件会被后面引入的js的注册事件覆盖掉。</p>
+<p>html和css代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;按钮&quot;</span> <span class="attr">id</span>=<span class="string">&quot;btn&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>JavaScript代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;publick.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;programmer1.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;programmer2.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="title function_">my$</span>(<span class="string">&quot;btn&quot;</span>).<span class="property">onclick</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;雪哥好帅哦&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//只执行最后一个点击事件了</span></span><br></pre></td></tr></table></figure>
+
+<p>下面对事件相关的方法进行详细学习，以解决以上存在的事件覆盖的问题。</p>
+<p>addEventListener，将指定的监听器注册到 EventTarget（事件目标）上，当该对象触发指定的事件时，指定的回调函数就会被执行。说白了，就是addEventListener可以将时间监听器注册到btn按钮上，当事件发生时，调用事件处理函数。</p>
+<p>html和css代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;btn&quot;</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;按钮&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>JavaScript代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> 对象.<span class="title function_">addEventListener</span>(<span class="string">&quot;事件类型&quot;</span>,事件处理函数,<span class="literal">false</span>);--谷歌和火狐支持,<span class="title class_">IE8</span>不支持</span><br><span class="line"><span class="comment">//参数1:事件的类型---事件的名字,没有on</span></span><br><span class="line"><span class="comment">//参数2:事件处理函数---函数(命名函数,匿名函数)</span></span><br><span class="line"><span class="comment">//参数3:布尔类型,目前就写false-----没有为什么,不解释,明天说</span></span><br><span class="line"><span class="title function_">my$</span>(<span class="string">&quot;btn&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>,<span class="keyword">function</span> (<span class="params"></span>) &#123;<span class="comment">//为同一个元素绑定多个相同的事件</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;我是第一个点击事件&quot;</span>);</span><br><span class="line">&#125;,<span class="literal">false</span>);</span><br><span class="line"><span class="title function_">my$</span>(<span class="string">&quot;btn&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>,<span class="keyword">function</span> (<span class="params"></span>) &#123;<span class="comment">//为同一个元素绑定多个相同的事件</span></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;我是第二个点击事件&quot;</span>);</span><br><span class="line">&#125;,<span class="literal">false</span>);</span><br><span class="line"><span class="title function_">my$</span>(<span class="string">&quot;btn&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>,<span class="keyword">function</span> (<span class="params"></span>) &#123;<span class="comment">//为同一个元素绑定多个相同的事件</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;我是第三个点击事件&quot;</span>);</span><br><span class="line">&#125;,<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+
+
+<p>1、以前的方式：无法给一个对象注册多个同种事件<br>2、addEventListener方式<br>如果想支持所有浏览器，则想办法解决兼容性问题即可，现在只需了解兼容性问题的解决，将来会使用框架，框架已经帮我们解决了浏览器兼容性问题。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对象.attachEvent(&quot;有on的事件类型&quot;,事件处理函数)--谷歌不支持,火狐不支持,IE8支持</span></span><br><span class="line"><span class="comment">//参数1:事件类型---事件名字，有on</span></span><br><span class="line"><span class="comment">//参数2:事件处理函数---函数(命名函数,匿名函数)</span></span><br><span class="line"></span><br><span class="line"><span class="title function_">my$</span>(<span class="string">&quot;btn&quot;</span>).<span class="title function_">attachEvent</span>(<span class="string">&quot;onclick&quot;</span>,<span class="keyword">function</span> (<span class="params"></span>) &#123;<span class="comment">//谷歌和火狐不支持</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;我是第一个点击事件&quot;</span>);<span class="comment">//审查元素会报错</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="title function_">my$</span>(<span class="string">&quot;btn&quot;</span>).<span class="title function_">attachEvent</span>(<span class="string">&quot;onclick&quot;</span>,<span class="keyword">function</span> (<span class="params"></span>) &#123;<span class="comment">//谷歌和火狐不支持</span></span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;我是第二个点击事件&quot;</span>);<span class="comment">//审查元素会报错</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="title function_">my$</span>(<span class="string">&quot;btn&quot;</span>).<span class="title function_">attachEvent</span>(<span class="string">&quot;onclick&quot;</span>,<span class="keyword">function</span> (<span class="params"></span>) &#123;<span class="comment">//谷歌和火狐不支持</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;我是第三个点击事件&quot;</span>);<span class="comment">//审查元素会报错</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="为元素解绑事件（掌握）"><a href="#为元素解绑事件（掌握）" class="headerlink" title="为元素解绑事件（掌握）"></a>为元素解绑事件（掌握）</h3><p>在开发中，如果想让按钮的事件处理函数只能执行一次，怎么办？如何移除元素的事件？</p>
+<p>html和css代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;绑定事件&quot;</span> <span class="attr">id</span>=<span class="string">&quot;btn&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;解绑第一个事件&quot;</span> <span class="attr">id</span>=<span class="string">&quot;btn2&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>JavaScript代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1 事件源.on事件名字=事件处理函数----绑定事件</span></span><br><span class="line"><span class="title function_">my$</span>(<span class="string">&quot;btn&quot;</span>).<span class="property">onclick</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;我绑定了事件&quot;</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//第一种：解绑事件的方式</span></span><br><span class="line"><span class="title function_">my$</span>(<span class="string">&quot;btn2&quot;</span>).<span class="property">onclick</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title function_">my$</span>(<span class="string">&quot;btn&quot;</span>).<span class="property">onclick</span> = <span class="literal">null</span>;<span class="comment">//执行这行代码之后，事件就被清掉了，在点击第一个按钮也不起作用了</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 1.解绑事件</span></span><br><span class="line"><span class="comment">* 事件源.on事件名字=事件处理函数---&gt;绑定事件</span></span><br><span class="line"><span class="comment">* 事件源.on事件名字=null;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//第二种解绑事件的方式</span></span><br><span class="line"><span class="comment">//1 事件源.addEventListener(&quot;没有on的事件类型&quot;,命名函数,false);---绑定事件</span></span><br><span class="line">    <span class="comment">/*my$(&quot;btn&quot;).addEventListener(&quot;click&quot;,function () &#123;</span></span><br><span class="line"><span class="comment">        console.log(&quot;第一个&quot;);</span></span><br><span class="line"><span class="comment">    &#125;,false);</span></span><br><span class="line"><span class="comment">    my$(&quot;btn&quot;).addEventListener(&quot;click&quot;,function () &#123;</span></span><br><span class="line"><span class="comment">        console.log(&quot;第二个&quot;);</span></span><br><span class="line"><span class="comment">    &#125;,false);</span></span><br><span class="line"><span class="comment">    //点击第二个按钮把第一个按钮的第一个点击事件解绑</span></span><br><span class="line"><span class="comment">    my$(&quot;btn2&quot;).onclick = function () &#123;</span></span><br><span class="line"><span class="comment">        my$(&quot;btn&quot;).removeEventListener(&quot;click&quot;,function () &#123;</span></span><br><span class="line"><span class="comment">            console.log(&quot;第一个&quot;);//这样就没解绑成功，因为是两个匿名函数，不是同一个函数</span></span><br><span class="line"><span class="comment">        &#125;,false)</span></span><br><span class="line"><span class="comment">    &#125;*/</span></span><br><span class="line"><span class="comment">//解绑事件的时候,需要在绑定事件的时候,使用命名函数，就是复制上面代码改下</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">f1</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;第一个&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">f2</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;第二个&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"> <span class="title function_">my$</span>(<span class="string">&quot;btn&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>,f1,<span class="literal">false</span>);</span><br><span class="line"><span class="title function_">my$</span>(<span class="string">&quot;btn&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>,f2,<span class="literal">false</span>);</span><br><span class="line"><span class="comment">//点击第二个按钮把第一个按钮的第一个点击事件解绑</span></span><br><span class="line"><span class="title function_">my$</span>(<span class="string">&quot;btn2&quot;</span>).<span class="property">onclick</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">   <span class="title function_">my$</span>(<span class="string">&quot;btn&quot;</span>).<span class="title function_">removeEventListener</span>(<span class="string">&quot;click&quot;</span>,f1,<span class="literal">false</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//第三种解绑事件的方式</span></span><br><span class="line"><span class="comment">//这个只有IE8才支持，谷歌就不要看了</span></span><br><span class="line"><span class="comment">//事件源.attachEvent(&quot;on事件类型&quot;,命名函数);---绑定事件</span></span><br><span class="line"><span class="comment">//事件源.detachEvent(&quot;on事件类型&quot;,函数名字);</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">f1</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;第一个&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">f2</span>(<span class="params"></span>) &#123;</span><br><span class="line">     <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;第二个&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">my$</span>(<span class="string">&quot;btn&quot;</span>).<span class="title function_">attachEvent</span>(<span class="string">&quot;onclick&quot;</span>,f1);</span><br><span class="line"><span class="title function_">my$</span>(<span class="string">&quot;btn&quot;</span>).<span class="title function_">attachEvent</span>(<span class="string">&quot;onclick&quot;</span>,f2);</span><br><span class="line"><span class="comment">//点击第二个按钮把第一个按钮的第一个点击事件解绑</span></span><br><span class="line"><span class="title function_">my$</span>(<span class="string">&quot;btn2&quot;</span>).<span class="property">onclick</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">   <span class="title function_">my$</span>(<span class="string">&quot;btn&quot;</span>).<span class="title function_">detachEvent</span>(<span class="string">&quot;click&quot;</span>,f1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>小结</strong>:用什么方式绑定事件,就应该用对应的方式解绑事件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">移除事件的三种方式小结如下：</span><br><span class="line"><span class="number">1</span>、onclick：让按钮的事件处理函数只能执行一次，onclick=<span class="literal">null</span> ；</span><br><span class="line"><span class="number">2</span>、removeEventListener：如果想要移除事件，注册事件的时候就不能使用匿名函数；</span><br><span class="line"><span class="number">3</span>、detachEvent：谷歌中不支持，<span class="title class_">IE9</span>-<span class="title class_">IE11</span>中支持，了解即可；</span><br></pre></td></tr></table></figure>
+
+<h3 id="事件的三个阶段（事件冒泡）"><a href="#事件的三个阶段（事件冒泡）" class="headerlink" title="事件的三个阶段（事件冒泡）"></a>事件的三个阶段（事件冒泡）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">事件冒泡:多个元素嵌套,有层次关系,这些元素都注册了相同的事件,如果里面的元素的事件触发了,外面的元素的该事件自动的触发了.</span><br></pre></td></tr></table></figure>
+
+<p>html和css代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-id">#dv1</span>&#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background-color</span>: red;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-id">#dv2</span>&#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">250px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">150px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background-color</span>: green;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-id">#dv3</span>&#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background-color</span>: blue;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;dv1&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;dv2&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;dv3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>JavaScript代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">my$</span>(<span class="string">&quot;dv1&quot;</span>).<span class="property">onclick</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">id</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="title function_">my$</span>(<span class="string">&quot;dv2&quot;</span>).<span class="property">onclick</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">id</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="title function_">my$</span>(<span class="string">&quot;dv3&quot;</span>).<span class="property">onclick</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">id</span>);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//事件冒泡,阻止事件冒泡,</span></span><br><span class="line"><span class="comment">//如何阻止事件冒泡:window.event.cancelBubble=true; IE特有的,谷歌支持,火狐不支持</span></span><br><span class="line"><span class="title function_">my$</span>(<span class="string">&quot;dv1&quot;</span>).<span class="property">onclick</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">id</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="title function_">my$</span>(<span class="string">&quot;dv2&quot;</span>).<span class="property">onclick</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">id</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="title function_">my$</span>(<span class="string">&quot;dv3&quot;</span>).<span class="property">onclick</span> = <span class="keyword">function</span> (<span class="params">e</span>) &#123;<span class="comment">//2、event--事件简写e</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">id</span>);</span><br><span class="line">    e.<span class="title function_">stopPropagation</span>();<span class="comment">//5、谷歌和火狐支持</span></span><br><span class="line">    <span class="comment">//window.event.cancelBubble = true;//4、火狐不支持</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//console.log(e);//3、是一个对象，叫做事件参数对象</span></span><br><span class="line">    <span class="comment">//console.log(arguments.length);//1、检测函数在调用的时候里面有没有参数</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>：事件有三个阶段:<br>事件发生的时候，要经过事件的三个阶段，我们常常使用的是事件冒泡阶段，而其他两个阶段不能人为干预。</p>
+<p>在JavaScript中，事件有以下三个阶段<br>    第一阶段：捕获阶段<br>    第二阶段：目标阶段（执行当前点击的元素）<br>    第三阶段：冒泡阶段</p>
+<p>第一阶段：捕获阶段</p>
+<p><img src="/images/%E6%8D%95%E8%8E%B7%E9%98%B6%E6%AE%B5.png"></p>
+<p>第二阶段：目标阶段（执行当前点击的元素）</p>
+<p>第三阶段：冒泡阶段</p>
+<p><img src="/images/%E5%86%92%E6%B3%A1%E9%98%B6%E6%AE%B5.png"></p>
+<p>注意，注册事件有三种，其中onclick、attachEvent没有第三个参数，实际上我们无法通过onclick、attachEvent来干预事件的第一阶段和第二阶段, 因为onclick、attachEvent都只有两个参数, 而且onclick、attachEvent注册的事件默认是冒泡阶段。很多时候我们只关心事件的第三阶段，即冒泡阶段。</p>
+<h3 id="事件委托（掌握）"><a href="#事件委托（掌握）" class="headerlink" title="事件委托（掌握）"></a>事件委托（掌握）</h3><p>案例</p>
+<p>选择美女：当点击li时，选中li</p>
+<p>在事件冒泡中，怎么获取被点击的元素？我们可以利用事件冒泡的特点：当子元素的事件发生时，父元素的同名事件也会发生。</p>
+<p>利用事件冒泡的特点：当点击子元素时，父元素的同名事件也会发生。</p>
+<p>知识点：<br>    1、事件委托：原理就是事件冒泡。此处的事件委托是，当li被点击时，li并没有做事件处理，而是委托ul做了事件处理，ul事件中可以使用事件对象e获取target属性，完成事件处理。<br>    2、事件对象（事件处理函数的参数e）</p>
+<p>html和css代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;ul&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>西施<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>貂蝉<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>昭君<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>凤姐<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>芙蓉姐姐<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>JavaScript代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//事件冒泡的应用（事件委托）</span></span><br><span class="line"><span class="title function_">my$</span>(<span class="string">&#x27;ul&#x27;</span>).<span class="property">onclick</span> = <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">    <span class="comment">//e是事件对象，通过事件对象可以获取到触发事件的真正的元素相关的信息</span></span><br><span class="line">    <span class="comment">// console.log(e);</span></span><br><span class="line">    <span class="comment">// console.log(this);</span></span><br><span class="line">    <span class="comment">//e.target：获取真正触发事件的那个元素</span></span><br><span class="line">    <span class="comment">// console.log(e.target);</span></span><br><span class="line">    <span class="keyword">var</span> target = e.<span class="property">target</span>;</span><br><span class="line">    target.<span class="property">style</span>.<span class="property">backgroundColor</span>=<span class="string">&#x27;lightblue&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>小结</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">知识点：事件委托，事件对象；</span><br><span class="line">事件处理函数在事件发生时，由系统去调用，系统在调用事件处理函数时，会传入事件对象，所以我们可以直接使用事件对象。</span><br></pre></td></tr></table></figure>
+
+<h3 id="最大的匿名函数（window-onload）"><a href="#最大的匿名函数（window-onload）" class="headerlink" title="最大的匿名函数（window.onload）"></a>最大的匿名函数（window.onload）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">window.onload = function () &#123;</span><br><span class="line">var btn = document.getElementById(&quot;btn&quot;);</span><br><span class="line">      btn.onclick = function () &#123;</span><br><span class="line">         alert(&quot;哈哈&quot;);</span><br><span class="line"> 		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="定时器（setInterval）"><a href="#定时器（setInterval）" class="headerlink" title="定时器（setInterval）"></a>定时器（setInterval）</h3><p>html和css代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;停止&quot;</span> <span class="attr">id</span>=<span class="string">&quot;btn&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>JavaScript代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//setInterval定时器</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 参数1、函数</span></span><br><span class="line"><span class="comment">* 参数2、时间---单位毫秒---1000毫秒--1秒</span></span><br><span class="line"><span class="comment">* 执行过程:页面加载完毕后，过了1秒，执行一次函数代码，有过了1秒再执行函数...</span></span><br><span class="line"><span class="comment">* 返回值就是定时的id</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> timeId = <span class="built_in">setInterval</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title function_">alert</span>(<span class="string">&quot;哈哈&quot;</span>);</span><br><span class="line">&#125;,<span class="number">2000</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//点击按钮清除定时器</span></span><br><span class="line"><span class="keyword">var</span> btn = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn&quot;</span>);</span><br><span class="line">btn.<span class="property">onclick</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">   <span class="comment">//参数:要清理的定时器id的值</span></span><br><span class="line">   <span class="variable language_">window</span>.<span class="built_in">clearInterval</span>(timeId);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="一起摇起来"><a href="#一起摇起来" class="headerlink" title="一起摇起来"></a>一起摇起来</h3><p>html和css代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">img</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">div</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">position</span>: absolute;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;摇起来&quot;</span> <span class="attr">id</span>=<span class="string">&quot;btn1&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;停止&quot;</span> <span class="attr">id</span>=<span class="string">&quot;btn2&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;dv&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;images/heihei.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;images/lyml.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>JavaScript代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//点击按钮摇起来</span></span><br><span class="line">  <span class="keyword">var</span> timeId=<span class="string">&quot;&quot;</span>;</span><br><span class="line">  <span class="title function_">my$</span>(<span class="string">&quot;btn1&quot;</span>).<span class="property">onclick</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    timeId= <span class="built_in">setInterval</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">      <span class="comment">//随机数</span></span><br><span class="line">      <span class="keyword">var</span> x = <span class="built_in">parseInt</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span> + <span class="number">1</span>);</span><br><span class="line">      <span class="keyword">var</span> y = <span class="built_in">parseInt</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span> + <span class="number">1</span>);</span><br><span class="line">      <span class="comment">//设置元素的left和top属性值</span></span><br><span class="line">      <span class="title function_">my$</span>(<span class="string">&quot;dv&quot;</span>).<span class="property">style</span>.<span class="property">left</span> = x + <span class="string">&quot;px&quot;</span>;</span><br><span class="line">      <span class="title function_">my$</span>(<span class="string">&quot;dv&quot;</span>).<span class="property">style</span>.<span class="property">top</span> = y + <span class="string">&quot;px&quot;</span>;</span><br><span class="line">    &#125;, <span class="number">10</span>);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">my$</span>(<span class="string">&quot;btn2&quot;</span>).<span class="property">onclick</span>=<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="built_in">clearInterval</span>(timeId);</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><p><a target="_blank" rel="noopener" href="http://codesohigh.com/day">http://codesohigh.com/day</a></p>
+<p>最低要求，实现时间的实时变化。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>没有了~<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Echars/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Echars/">echars</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Vue02/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Vue02/">Vue生命周期函数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Vue框架//" class="article-tag-list-link color1">Vue框架</a>
+        			<a href="/categories/js部分//" class="article-tag-list-link color5">js部分</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Vue03/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2022/09/19/js03/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          js03
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/09/19/js05/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js05</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Vue03/">Vue脚手架</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Vue框架//" class="article-tag-list-link color1">Vue框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Vue04/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Vue04/">Vuex</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Vue框架//" class="article-tag-list-link color1">Vue框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/git/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/git/">git语句</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Vue06/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Vue06/">Vue数据请求</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Vue框架//" class="article-tag-list-link color1">Vue框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/jq01/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/jq01/">jq01</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/jq部分//" class="article-tag-list-link color5">jq部分</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Vue05/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Vue05/">Vue路由</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Vue框架//" class="article-tag-list-link color1">Vue框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/jq02/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/jq02/">js02</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/jq部分//" class="article-tag-list-link color5">jq部分</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/jq03/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/jq03/">js03</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/jq部分//" class="article-tag-list-link color5">jq部分</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2022/page/2/">2</a><a class="page-number" href="/archives/2022/page/3/">3</a><a class="extend next" rel="next" href="/archives/2022/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -551,8 +414,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

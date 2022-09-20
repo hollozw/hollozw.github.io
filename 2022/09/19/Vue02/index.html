@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022 | hollow</title>
+  <title>Vue生命周期函数 | hollow</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hollow">
-<meta property="og:url" content="http://example.com/archives/2022/index.html">
+  <meta name="description" content="vue中的生命周期函数什么是生命周期 vue的声明周期就是vue在创建到销毁的过程,vue的生命周期就是一堆函数,这些函数都是钩子函数  vue的生命周期函数都包含哪些?1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue生命周期函数">
+<meta property="og:url" content="http://example.com/2022/09/19/Vue02/index.html">
 <meta property="og:site_name" content="hollow">
+<meta property="og:description" content="vue中的生命周期函数什么是生命周期 vue的声明周期就是vue在创建到销毁的过程,vue的生命周期就是一堆函数,这些函数都是钩子函数  vue的生命周期函数都包含哪些?1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162">
 <meta property="og:locale">
+<meta property="article:published_time" content="2022-09-19T05:49:33.000Z">
+<meta property="article:modified_time" content="2022-09-19T14:51:01.789Z">
 <meta property="article:author" content="hollow">
 <meta name="twitter:card" content="summary">
   
@@ -151,64 +155,61 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="photo-Vue02" class="article article-type-photo " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Vue生命周期函数
+    </h1>
+  
+
+        
+        <a href="/2022/09/19/Vue02/" class="archive-article-date">
+  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="vue中的生命周期函数"><a href="#vue中的生命周期函数" class="headerlink" title="vue中的生命周期函数"></a>vue中的生命周期函数</h1><h2 id="什么是生命周期"><a href="#什么是生命周期" class="headerlink" title="什么是生命周期"></a>什么是生命周期</h2><ul>
+<li>vue的声明周期就是vue在创建到销毁的过程,vue的生命周期就是一堆函数,这些函数都是钩子函数</li>
+</ul>
+<h2 id="vue的生命周期函数都包含哪些"><a href="#vue的生命周期函数都包含哪些" class="headerlink" title="vue的生命周期函数都包含哪些?"></a>vue的生命周期函数都包含哪些?</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">    &lt;!-- 开发环境版本，包含了有帮助的命令行警告 --&gt;</span><br><span class="line">    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">        &lt;div id=&quot;box&quot;&gt;&#123;&#123;str&#125;&#125;&lt;/div&gt;</span><br><span class="line">        &lt;input type=&quot;text&quot; v-model=&quot;str&quot;&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    new Vue(&#123;</span><br><span class="line">        el:&quot;#app&quot;,</span><br><span class="line">        data:&#123;</span><br><span class="line">            str:&quot;这是vue中的数据&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">            fun()&#123;</span><br><span class="line">                console.log(&quot;fun方法被执行了&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        //生命周期函数</span><br><span class="line">        beforeCreate() &#123;</span><br><span class="line">            // console.log(&quot;beforeCreate被执行了&quot;);</span><br><span class="line">            // console.log(this.str);</span><br><span class="line">            // let box = document.getElementById(&#x27;box&#x27;);</span><br><span class="line">            // console.log(box.innerHTML);</span><br><span class="line">        &#125;,</span><br><span class="line">        //实例已经在内存中创建完成了,此时的data和methods已经被初始化了,但是还没有完成数据的渲染</span><br><span class="line">        created() &#123;</span><br><span class="line">            // console.log(&quot;Created被执行了&quot;);</span><br><span class="line">            // console.log(this.str);</span><br><span class="line">            // let box = document.getElementById(&#x27;box&#x27;);</span><br><span class="line">            // console.log(box.innerHTML);</span><br><span class="line">        &#125;,</span><br><span class="line">        //Mount  挂载(渲染) 此时模板编译已经完成,但是还没有将数据挂载到页面上</span><br><span class="line">        beforeMount() &#123;</span><br><span class="line">            // console.log(&quot;beforeMount被执行了&quot;); // √</span><br><span class="line">            // console.log(this.str);  // 会出现数据</span><br><span class="line">            // let box = document.getElementById(&#x27;box&#x27;);</span><br><span class="line">            // console.log(box.innerHTML); // &#123;&#123;str&#125;&#125;  数据</span><br><span class="line">        &#125;,</span><br><span class="line">        //此时模板渲染已经完成</span><br><span class="line">        mounted()&#123;</span><br><span class="line">            // console.log(&quot;mounted被执行了&quot;); // √</span><br><span class="line">            // console.log(this.str);  // 会出现数据</span><br><span class="line">            // let box = document.getElementById(&#x27;box&#x27;);</span><br><span class="line">            // console.log(box.innerHTML); // &#123;&#123;str&#125;&#125;  数据</span><br><span class="line">        &#125;,</span><br><span class="line">        //修改之前,数据已经被修改了,但是被修改的值还未被更新到页面上</span><br><span class="line">        beforeUpdate() &#123;</span><br><span class="line">            // console.log(&quot;beforeUpdate被执行了&quot;);</span><br><span class="line">            // console.log(this.str);// 修改后的值</span><br><span class="line">            // let box = document.getElementById(&#x27;box&#x27;);</span><br><span class="line">            // console.log(box.innerHTML); // 原来的值</span><br><span class="line">        &#125;,</span><br><span class="line">        //数据被修改了,页面上的数据也被更新了</span><br><span class="line">        updated()&#123;</span><br><span class="line">            console.log(&quot;Updated被执行了&quot;);</span><br><span class="line">            console.log(this.str);// 修改后的值</span><br><span class="line">            let box = document.getElementById(&#x27;box&#x27;);</span><br><span class="line">            console.log(box.innerHTML); // 修改后的值</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">生命周期函数中的销毁:</span><br><span class="line">beforeDestroy() 销毁之前</span><br><span class="line">destroyed()  销毁之后</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>没有了~<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Echars/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Echars/">echars</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Vue02/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Vue02/">Vue生命周期函数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -221,313 +222,61 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Vue03/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2022/09/19/Echars/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          echars
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/09/19/Vue03/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue脚手架</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Vue03/">Vue脚手架</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Vue框架//" class="article-tag-list-link color1">Vue框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Vue04/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Vue04/">Vuex</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Vue框架//" class="article-tag-list-link color1">Vue框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/git/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/git/">git语句</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Vue06/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Vue06/">Vue数据请求</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Vue框架//" class="article-tag-list-link color1">Vue框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/jq01/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/jq01/">jq01</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/jq部分//" class="article-tag-list-link color5">jq部分</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Vue05/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Vue05/">Vue路由</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Vue框架//" class="article-tag-list-link color1">Vue框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/jq02/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/jq02/">js02</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/jq部分//" class="article-tag-list-link color5">jq部分</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/jq03/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/jq03/">js03</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/jq部分//" class="article-tag-list-link color5">jq部分</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2022/page/2/">2</a><a class="page-number" href="/archives/2022/page/3/">3</a><a class="extend next" rel="next" href="/archives/2022/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -551,8 +300,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

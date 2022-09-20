@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022 | hollow</title>
+  <title>echars | hollow</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hollow">
-<meta property="og:url" content="http://example.com/archives/2022/index.html">
+  <meta name="description" content="1. 介绍矢量图特点 : 不是单纯用像素点去呈现的图像 , 而是用代码计算出来的,无论放大 , 缩小多少倍 , 不会虚化 , 失真的效果 打破单纯的视觉呈现，拥有互动图形用户界面 百度迁徙。百度人气   国家统计局   数托邦。。。。。。。  拖拽重计算：随意整合关心的数据 剔除畸形数据 转化数据视图，将数据编程纯文本格式 可以切换不同表现形式。柱形-&gt;折线  Echarts 怎么用 ?">
+<meta property="og:type" content="article">
+<meta property="og:title" content="echars">
+<meta property="og:url" content="http://example.com/2022/09/19/Echars/index.html">
 <meta property="og:site_name" content="hollow">
+<meta property="og:description" content="1. 介绍矢量图特点 : 不是单纯用像素点去呈现的图像 , 而是用代码计算出来的,无论放大 , 缩小多少倍 , 不会虚化 , 失真的效果 打破单纯的视觉呈现，拥有互动图形用户界面 百度迁徙。百度人气   国家统计局   数托邦。。。。。。。  拖拽重计算：随意整合关心的数据 剔除畸形数据 转化数据视图，将数据编程纯文本格式 可以切换不同表现形式。柱形-&gt;折线  Echarts 怎么用 ?">
 <meta property="og:locale">
+<meta property="article:published_time" content="2022-09-19T05:49:33.000Z">
+<meta property="article:modified_time" content="2022-09-19T10:35:51.194Z">
 <meta property="article:author" content="hollow">
 <meta name="twitter:card" content="summary">
   
@@ -151,383 +155,496 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="photo-Echars" class="article article-type-photo " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      echars
+    </h1>
+  
+
+        
+        <a href="/2022/09/19/Echars/" class="archive-article-date">
+  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1. 介绍"></a>1. 介绍</h2><p>矢量图特点 : 不是单纯用像素点去呈现的图像 , 而是用代码计算出来的,无论放大 , 缩小多少倍 , 不会虚化 , 失真的效果</p>
+<p>打破单纯的视觉呈现，拥有互动图形用户界面</p>
+<p>百度迁徙。百度人气   国家统计局   数托邦。。。。。。。</p>
+<ul>
+<li>拖拽重计算：随意整合关心的数据</li>
+<li>剔除畸形数据</li>
+<li>转化数据视图，将数据编程纯文本格式</li>
+<li>可以切换不同表现形式。柱形-&gt;折线</li>
+</ul>
+<p>Echarts 怎么用 ?    复制 + 百度 </p>
+<h2 id="2-上手"><a href="#2-上手" class="headerlink" title="2. 上手"></a>2. 上手</h2><h3 id="1-引入"><a href="#1-引入" class="headerlink" title="1.引入"></a>1.引入</h3><p><a target="_blank" rel="noopener" href="https://www.bootcdn.cn/echarts/">https://www.bootcdn.cn/echarts/</a> 引入cdn</p>
+<ul>
+<li>引入echarts</li>
+<li>准备画布 div</li>
+<li>初始化echarts</li>
+<li>准备配置项  <span style="color:red;">******</span> </li>
+<li>将配置项设置给echarts实例</li>
+</ul>
+<p>见 1.html </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&#x27;box&#x27;</span> <span class="attr">style</span>=<span class="string">&quot;width:600px;height:400px;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">let</span> mc = echarts.<span class="title function_">init</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;box&#x27;</span>));</span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 指定图表的配置项和数据</span></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">var</span> option = &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//x轴内容</span></span></span><br><span class="line"><span class="language-javascript">    <span class="attr">xAxis</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">data</span>: [<span class="string">&quot;衬衫&quot;</span>,<span class="string">&quot;羊毛衫&quot;</span>,<span class="string">&quot;雪纺衫&quot;</span>,<span class="string">&quot;裤子&quot;</span>,<span class="string">&quot;高跟鞋&quot;</span>,<span class="string">&quot;袜子&quot;</span>]</span></span><br><span class="line"><span class="language-javascript">    &#125;,</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//y轴内容 默认value 自动去series中对应寻找</span></span></span><br><span class="line"><span class="language-javascript">    <span class="attr">yAxis</span>: &#123;&#125;,</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//系列列表</span></span></span><br><span class="line"><span class="language-javascript">    <span class="attr">series</span>: [&#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">name</span>: <span class="string">&#x27;销量&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">type</span>: <span class="string">&#x27;bar&#x27;</span>,  <span class="comment">//bar就是柱状图  line 先行图   pie 饼状图</span></span></span><br><span class="line"><span class="language-javascript">      <span class="attr">data</span>: [<span class="number">5</span>, <span class="number">20</span>, <span class="number">36</span>, <span class="number">10</span>, <span class="number">10</span>, </span></span><br><span class="line"><span class="language-javascript">             b20]， </span></span><br><span class="line"><span class="language-javascript">    &#125;,]</span></span><br><span class="line"><span class="language-javascript">  &#125;;</span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 使用刚指定的配置项和数据显示图</span></span></span><br><span class="line"><span class="language-javascript">  mc.<span class="title function_">setOption</span>(option);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如何看手册</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//~~~~后加的</span></span><br><span class="line"><span class="attr">title</span>: &#123;</span><br><span class="line">  <span class="attr">text</span>: <span class="string">&#x27;标题&#x27;</span>,</span><br><span class="line">    <span class="attr">link</span>: <span class="string">&quot;http://xx&quot;</span>, <span class="comment">//主标题点击后的超链接</span></span><br><span class="line">      <span class="attr">textStyle</span>:&#123;</span><br><span class="line">        <span class="attr">color</span>:<span class="string">&#x27;orange&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">&#125;,</span><br><span class="line">  <span class="comment">//~~~~后加的</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-柱状图"><a href="#3-柱状图" class="headerlink" title="3. 柱状图"></a>3. 柱状图</h2><p>![image-20210325104039727](&#x2F;Users&#x2F;chenxiaoyu&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20210325104039727.png)</p>
+<ul>
+<li><p>引入echarts</p>
+</li>
+<li><p>准备一个div</p>
+</li>
+<li><p>准备x轴数据[数组]</p>
+</li>
+<li><p>准备y轴数据[]</p>
+</li>
+<li><p>在series下设置type为bar</p>
+</li>
+</ul>
+<h3 id="1-常见标记"><a href="#1-常见标记" class="headerlink" title="1. 常见标记"></a>1. 常见标记</h3><ul>
+<li><p>标记：最大值 最小值 平均值</p>
+<p>在series中    </p>
+<p>markPoint 图表标注  配置最大最小。</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//系列列表</span></span><br><span class="line"><span class="attr">series</span>: [&#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;销量&#x27;</span>,</span><br><span class="line">  <span class="attr">type</span>: <span class="string">&#x27;bar&#x27;</span>,  <span class="comment">//bar就是柱状图  line 先行图   pie 饼状图</span></span><br><span class="line">  <span class="attr">data</span>: [<span class="number">5</span>, <span class="number">20</span>, <span class="number">36</span>, <span class="number">10</span>, <span class="number">10</span>, <span class="number">20</span>],</span><br><span class="line">  <span class="comment">//~~~~~~~~~~~~~~~~~¬¬~~</span></span><br><span class="line">  <span class="attr">markPoint</span>:&#123;</span><br><span class="line">    <span class="attr">data</span>:[</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">name</span>:<span class="string">&quot;最大值&quot;</span>,</span><br><span class="line">        <span class="attr">type</span>:<span class="string">&quot;max&quot;</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">name</span>:<span class="string">&quot;最小值&quot;</span>,</span><br><span class="line">        <span class="attr">type</span>:<span class="string">&quot;min&quot;</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line">&#125;,]</span><br></pre></td></tr></table></figure>
+
+<p>​	markLine 图表标线    平均值 写series里面的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">markLine</span>:&#123;</span><br><span class="line">  <span class="attr">data</span>:[</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">name</span>:<span class="string">&quot;最大值&quot;</span>,</span><br><span class="line">      <span class="attr">type</span>:<span class="string">&quot;average&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示数值</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">label</span>:&#123;</span><br><span class="line">  <span class="attr">show</span>:<span class="literal">true</span>,</span><br><span class="line">  <span class="attr">position</span>:<span class="string">&quot;left&quot;</span>,</span><br><span class="line">	<span class="attr">rotate</span>:<span class="number">60</span>,  <span class="comment">//旋转</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>设置宽度</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">barWidth</span>:<span class="string">&#x27;30%&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>横向柱状图，交换x和y</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//x轴内容</span></span><br><span class="line"><span class="attr">xAxis</span>: &#123;</span><br><span class="line">	<span class="attr">type</span>:<span class="string">&quot;value&quot;</span>,</span><br><span class="line">&#125;,</span><br><span class="line"><span class="comment">//y轴内容 默认value 自动去series中对应寻找</span></span><br><span class="line"><span class="attr">yAxis</span>: &#123;</span><br><span class="line">  <span class="attr">data</span>: [<span class="string">&quot;衬衫&quot;</span>,<span class="string">&quot;羊毛衫&quot;</span>,<span class="string">&quot;雪纺衫&quot;</span>,<span class="string">&quot;裤子&quot;</span>,<span class="string">&quot;高跟鞋&quot;</span>,<span class="string">&quot;袜子&quot;</span>],</span><br><span class="line">  <span class="attr">type</span>:<span class="string">&quot;category&quot;</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-通用配置—–title"><a href="#2-通用配置—–title" class="headerlink" title="2. 通用配置—–title"></a>2. 通用配置—–title</h3><ul>
+<li><p>文字样式</p>
+<p>textStyle</p>
+</li>
+<li><p>标题边框</p>
+<p>borderColor</p>
+</li>
+<li><p>位置</p>
+<p>left。top 。。。。</p>
+</li>
+</ul>
+<h3 id="3-通用配置—–tooltip"><a href="#3-通用配置—–tooltip" class="headerlink" title="3. 通用配置—–tooltip"></a>3. 通用配置—–tooltip</h3><p>鼠标滑过显示的效果</p>
+<ul>
+<li><p>触发类型 trigger</p>
+<ul>
+<li><p><code>&#39;item&#39;</code></p>
+<p>数据项图形触发，主要在散点图，饼图等无类目轴的图表中使用。</p>
+</li>
+<li><p><code>&#39;axis&#39;</code></p>
+<p>坐标轴触发，主要在柱状图，折线图等会使用类目轴的图表中使用。</p>
+</li>
+<li><p><code>&#39;none&#39;</code></p>
+<p>什么都不触发。</p>
+</li>
+</ul>
+</li>
+<li><p>触发时机 triggerOn</p>
+<ul>
+<li>mouseover</li>
+<li>click</li>
+</ul>
+</li>
+<li><p>格式化 formatter  自定义提示内容</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">tooltip</span>:&#123;</span><br><span class="line">  <span class="attr">trigger</span>:<span class="string">&quot;item&quot;</span>,</span><br><span class="line">  <span class="attr">triggerOn</span>:<span class="string">&quot;click&quot;</span>,</span><br><span class="line">  <span class="comment">//formatter:&quot;&#123;a&#125;&lt;br /&gt;~~&#123;b&#125;:&#123;c&#125;&quot;</span></span><br><span class="line">  <span class="attr">formatter</span>:<span class="function">(<span class="params">r</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(r);</span><br><span class="line">    <span class="keyword">let</span> str = <span class="string">&quot;&lt;div style=&#x27;color:red&#x27;&gt;&quot;</span>+r[<span class="string">&#x27;name&#x27;</span>]+<span class="string">&quot;:&quot;</span>+r[<span class="string">&#x27;value&#x27;</span>]+<span class="string">&quot;&lt;/div&gt;&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> str;  <span class="comment">//决定返回的内容</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-通用配置-——-toolbox"><a href="#4-通用配置-——-toolbox" class="headerlink" title="4. 通用配置 —— toolbox"></a>4. 通用配置 —— toolbox</h3><p>用于设置工具栏</p>
+<ul>
+<li>配置展示的工具 feature</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">toolbox</span>:&#123;</span><br><span class="line">  <span class="attr">feature</span>:&#123;</span><br><span class="line">    <span class="attr">saveAsImage</span>:&#123;&#125;,  <span class="comment">//保存图片</span></span><br><span class="line">    <span class="attr">dataView</span>:&#123;&#125;,     <span class="comment">//数据视图</span></span><br><span class="line">    <span class="attr">restore</span>:&#123;&#125;,       <span class="comment">//重制数据</span></span><br><span class="line">    <span class="attr">dataZoom</span>:&#123;&#125;,      <span class="comment">//区域缩放</span></span><br><span class="line">    <span class="attr">magicType</span>:&#123;         <span class="comment">//切换表现形式</span></span><br><span class="line">  		<span class="attr">type</span>: [<span class="string">&#x27;line&#x27;</span>, <span class="string">&#x27;bar&#x27;</span>]</span><br><span class="line"> 	 	&#125;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-通用配置-——-legend"><a href="#5-通用配置-——-legend" class="headerlink" title="5. 通用配置 ——- legend"></a>5. 通用配置 ——- legend</h3><p>用于筛选某些图例，需要和series配合使用，但是不卸载series里面</p>
+<ul>
+<li>再插入一组数据</li>
+<li>data是一个数组，data的值需要和series数组中某组数据的name值保持一致</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*legend:&#123;</span></span><br><span class="line"><span class="comment">  data:[&#x27;库存&#x27;,&#x27;销量&#x27;]</span></span><br><span class="line"><span class="comment">&#125;,*/</span></span><br><span class="line"><span class="attr">legend</span>:&#123;</span><br><span class="line">  <span class="attr">data</span>: [&#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;系列1&#x27;</span>,</span><br><span class="line">    <span class="comment">// 强制设置图形为圆。</span></span><br><span class="line">    <span class="attr">icon</span>: <span class="string">&#x27;circle&#x27;</span>,</span><br><span class="line">    <span class="comment">// 设置文本为红色</span></span><br><span class="line">    <span class="attr">textStyle</span>: &#123;</span><br><span class="line">        <span class="attr">color</span>: <span class="string">&#x27;red&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">	&#125;]</span><br><span class="line">&#125;,</span><br><span class="line">  <span class="comment">//系列列表</span></span><br><span class="line">  <span class="attr">series</span>: [&#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;库存&#x27;</span>,</span><br><span class="line">    <span class="attr">type</span>: <span class="string">&#x27;bar&#x27;</span>,  <span class="comment">//bar就是柱状图  line 先行图   pie 饼状图</span></span><br><span class="line">    <span class="attr">data</span>: [<span class="number">15</span>, <span class="number">10</span>, <span class="number">36</span>, <span class="number">40</span>, <span class="number">30</span>, <span class="number">20</span>]</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;销量&#x27;</span>,</span><br><span class="line">    <span class="attr">type</span>: <span class="string">&#x27;bar&#x27;</span>,  <span class="comment">//bar就是柱状图  line 先行图   pie 饼状图</span></span><br><span class="line">    <span class="attr">data</span>: [<span class="number">5</span>, <span class="number">20</span>, <span class="number">36</span>, <span class="number">10</span>, <span class="number">10</span>, <span class="number">20</span>],</span><br><span class="line">  &#125;,]</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-折线图"><a href="#4-折线图" class="headerlink" title="4. 折线图"></a>4. 折线图</h2><h3 id="1-案例—–-上半年绩效情况"><a href="#1-案例—–-上半年绩效情况" class="headerlink" title="1. 案例—– 上半年绩效情况"></a>1. 案例—– 上半年绩效情况</h3><table>
+<thead>
+<tr>
+<th>一月</th>
+<th>二月</th>
+<th>三月</th>
+<th>四月</th>
+<th>五月</th>
+<th>六月</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1400</td>
+<td>2500</td>
+<td>3200</td>
+<td>1800</td>
+<td>2100</td>
+<td>1900</td>
+</tr>
+</tbody></table>
+<h3 id="2-常见标记"><a href="#2-常见标记" class="headerlink" title="2. 常见标记"></a>2. 常见标记</h3><ul>
+<li>最大值 最小值 平均值 同上</li>
+<li>标注区间 markArea</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">series</span>:&#123;</span><br><span class="line">  <span class="attr">type</span>:<span class="string">&#x27;line&#x27;</span>,</span><br><span class="line">  <span class="attr">name</span>:<span class="string">&quot;绩效情况&quot;</span>,</span><br><span class="line">  <span class="attr">data</span>:[<span class="number">1400</span>,<span class="number">2500</span>,<span class="number">3200</span>,<span class="number">2800</span>,<span class="number">2100</span>,<span class="number">1900</span>],</span><br><span class="line">  <span class="attr">markPoint</span>:&#123;</span><br><span class="line">  <span class="attr">data</span>:[</span><br><span class="line">    &#123;<span class="attr">type</span>:<span class="string">&quot;max&quot;</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">type</span>:<span class="string">&quot;min&quot;</span>&#125;</span><br><span class="line">  ]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">markLine</span>:&#123;</span><br><span class="line">    <span class="attr">data</span>:[</span><br><span class="line">     	&#123;<span class="attr">type</span>:<span class="string">&quot;average&quot;</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  markArea</span><br><span class="line">    <span class="attr">data</span>:[</span><br><span class="line">      <span class="comment">//注意里面是数组了，因为每个数组里面需要标注开始时间和结束时间</span></span><br><span class="line">      [</span><br><span class="line">        &#123;<span class="attr">name</span>:<span class="string">&quot;投广告了&quot;</span>,<span class="attr">xAxis</span>:<span class="string">&quot;一月&quot;</span>&#125;, <span class="comment">//开始时间</span></span><br><span class="line">        &#123;<span class="attr">xAxis</span>:<span class="string">&quot;二月&quot;</span>&#125;  <span class="comment">//结束时间</span></span><br><span class="line">      ],</span><br><span class="line">      [</span><br><span class="line">        &#123;<span class="attr">xAxis</span>:<span class="string">&quot;四月&quot;</span>&#125;,</span><br><span class="line">        &#123;<span class="attr">xAxis</span>:<span class="string">&quot;六月&quot;</span>&#125;</span><br><span class="line">      ]</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>线条控制</p>
+<ul>
+<li>平滑曲线</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">smooth:true</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>线条样式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">lineStyle</span>:&#123;</span><br><span class="line">  <span class="attr">color</span>:<span class="string">&quot;orange&quot;</span>,</span><br><span class="line">  <span class="attr">type</span>:<span class="string">&#x27;dotted&#x27;</span> <span class="comment">//dashed  solid</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>填充样式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">areaStyle</span>:&#123;</span><br><span class="line">  <span class="attr">color</span>:<span class="string">&#x27;gold&#x27;</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>拐点样式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">itemStyle</span>:&#123;</span><br><span class="line">  <span class="attr">color</span>:<span class="string">&#x27;red&#x27;</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>c起点是否紧贴边缘 <span style="color:red">写在xAxis轴上的</span></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">xAxis</span>:&#123;</span><br><span class="line">  <span class="attr">type</span>:<span class="string">&#x27;category&#x27;</span>,</span><br><span class="line">  <span class="attr">data</span>:[<span class="string">&#x27;一月&#x27;</span>,<span class="string">&#x27;二月&#x27;</span>,<span class="string">&#x27;三月&#x27;</span>,<span class="string">&#x27;四月&#x27;</span>,<span class="string">&#x27;五月&#x27;</span>,<span class="string">&#x27;六月&#x27;</span>],</span><br><span class="line">  <span class="attr">boundaryGap</span>:<span class="literal">false</span>    <span class="comment">//x起点紧贴原点</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>脱离Y轴0起点<span style="color:red">写在yAxis轴上的</span></li>
+</ul>
+<p>如果切换数据 [2001,2000,2007,2009,2014,2003]，结果不明显</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">yAxis</span>:&#123;</span><br><span class="line">  <span class="attr">type</span>:<span class="string">&quot;value&quot;</span>,</span><br><span class="line">  <span class="attr">scale</span>:<span class="literal">true</span>    <span class="comment">//Y轴起点不从0开始</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>多组数据防止数据交叉—-堆叠图</li>
+</ul>
+<p>首先在同一个坐标上，再创建出一组数据 , 每组数据设置相同的stack</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">series</span>:[&#123;</span><br><span class="line">  <span class="attr">type</span>:<span class="string">&#x27;line&#x27;</span>,</span><br><span class="line">  <span class="attr">name</span>:<span class="string">&quot;绩效情况&quot;</span>,</span><br><span class="line">  <span class="attr">data</span>:[<span class="number">1400</span>,<span class="number">2500</span>,<span class="number">3200</span>,<span class="number">2800</span>,<span class="number">2100</span>,<span class="number">1900</span>],</span><br><span class="line">  <span class="attr">stack</span>:<span class="string">&quot;aa&quot;</span>，</span><br><span class="line">  <span class="attr">areaStyle</span>:&#123;&#125;  <span class="comment">//配合这个，效果更好</span></span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">type</span>:<span class="string">&#x27;line&#x27;</span>,</span><br><span class="line">  <span class="attr">name</span>:<span class="string">&quot;绩效aaa情况&quot;</span>,</span><br><span class="line">  <span class="attr">data</span>:[<span class="number">2400</span>,<span class="number">1500</span>,<span class="number">2200</span>,<span class="number">3000</span>,<span class="number">2500</span>,<span class="number">1800</span>],</span><br><span class="line">  <span class="attr">stack</span>:<span class="string">&#x27;aa&#x27;</span>，</span><br><span class="line">  <span class="attr">areaStyle</span>:&#123;&#125;  <span class="comment">//配合这个，效果更好</span></span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="5-散点图"><a href="#5-散点图" class="headerlink" title="5. 散点图"></a>5. 散点图</h2><p>可以描绘出，多种变量之间的相关性</p>
+<p>例如，身高和体重  ， 年龄和工资 ，风速和跑步速度</p>
+<p>x 和 y 都代表数值，数据需要二维数组</p>
+<p>type:scatter 散点图</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> mc = echarts.<span class="title function_">init</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;box&#x27;</span>));</span><br><span class="line"><span class="comment">// 指定图表的配置项和数据</span></span><br><span class="line"><span class="keyword">var</span> data = [&#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">161.2</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">51.6</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">167.5</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">59</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">159.5</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">49.2</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">157</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">63</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">155.8</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">53.6</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">170</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">59</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">159.1</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">47.6</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">166</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">69.8</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">176.2</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">66.8</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">160.2</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">75.2</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">172.5</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">55.2</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">170.9</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">54.2</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">172.9</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">62.5</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">153.4</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">42</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">160</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">50</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">147.2</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">49.8</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">168.2</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">49.2</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">175</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">73.2</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">157</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">47.8</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">167.6</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">68.8</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">159.5</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">50.6</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">175</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">82.5</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">166.8</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">57.2</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">176.5</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">87.8</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">170.2</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">72.8</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">174</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">54.5</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">173</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">59.8</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">179.9</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">67.3</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">170.5</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">67.8</span> &#125;, &#123;<span class="string">&quot;gender&quot;</span>: <span class="string">&quot;female&quot;</span>, <span class="string">&quot;height&quot;</span>: <span class="number">160</span>, <span class="string">&quot;weight&quot;</span>: <span class="number">47</span> &#125;]</span><br><span class="line"><span class="comment">//把数据中的height 和 weight循环放到一个数组中  需要一个二维数组</span></span><br><span class="line"><span class="keyword">let</span> dataArr = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; data.<span class="property">length</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">let</span> sArr = [data[i][<span class="string">&#x27;height&#x27;</span>],data[i][<span class="string">&#x27;weight&#x27;</span>]];</span><br><span class="line">  dataArr.<span class="title function_">push</span>(sArr);</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(dataArr</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> option = &#123;</span><br><span class="line">  <span class="attr">xAxis</span>:&#123;</span><br><span class="line">    <span class="attr">type</span>:<span class="string">&#x27;value&#x27;</span>,</span><br><span class="line">    <span class="attr">scale</span>:<span class="literal">true</span>     <span class="comment">//起点不为0</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">yAxis</span>:&#123;</span><br><span class="line">    <span class="attr">type</span>:<span class="string">&quot;value&quot;</span>，</span><br><span class="line">    <span class="attr">scale</span>:<span class="literal">true</span>   <span class="comment">//起点不为0</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">series</span>:[&#123;</span><br><span class="line">    <span class="attr">type</span>:<span class="string">&#x27;scatter&#x27;</span>,</span><br><span class="line">    <span class="attr">data</span>:dataArr  </span><br><span class="line">  &#125;]</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 使用刚指定的配置项和数据显示图表。</span></span><br><span class="line">mc.<span class="title function_">setOption</span>(option);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="气泡图效果-—-写在series中的"><a href="#气泡图效果-—-写在series中的" class="headerlink" title="气泡图效果 — 写在series中的"></a>气泡图效果 — 写在series中的</h3><ul>
+<li>散点的大小不同</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">symbolSize</span>:<span class="function">(<span class="params">r</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(r);</span><br><span class="line">  <span class="comment">//let re = Math.ceil(r[1]/10)*2;</span></span><br><span class="line">  <span class="comment">//bmi 计算   体重/身高*身高 》28 肥胖</span></span><br><span class="line">  <span class="keyword">let</span> re = r[<span class="number">1</span>]/((r[<span class="number">0</span>]/<span class="number">100</span>)*(r[<span class="number">0</span>]/<span class="number">100</span>))</span><br><span class="line">  <span class="keyword">if</span> (re &gt; <span class="number">28</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">20</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">10</span>;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>散点的颜色不同</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">itemStyle</span>:&#123;</span><br><span class="line">  <span class="comment">//color:&quot;orange&quot;  //散点颜色</span></span><br><span class="line">  <span class="attr">color</span>:<span class="function">(<span class="params">r</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(r);</span><br><span class="line">    <span class="keyword">let</span> re = r.<span class="property">data</span>[<span class="number">1</span>]/((r.<span class="property">data</span>[<span class="number">0</span>]/<span class="number">100</span>)*(r.<span class="property">data</span>[<span class="number">0</span>]/<span class="number">100</span>))</span><br><span class="line">    <span class="keyword">if</span> (re &gt; <span class="number">28</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&#x27;red&#x27;</span>;</span><br><span class="line">s    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;green&#x27;</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>涟漪动画效果</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">series</span>:[&#123;</span><br><span class="line">  <span class="attr">type</span>:<span class="string">&#x27;effectScatter&#x27;</span>,</span><br><span class="line">  <span class="attr">data</span>:dataArr,</span><br><span class="line">  <span class="comment">//修改涟漪动画</span></span><br><span class="line">  <span class="attr">rippleEffect</span>:&#123;</span><br><span class="line">    <span class="attr">scale</span>:<span class="number">10</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//修改产生时机</span></span><br><span class="line">  <span class="attr">showEffectOn</span>:<span class="string">&quot;emphasis&quot;</span>,     <span class="comment">//render一直有 ， emphasis 鼠标滑过有</span></span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure>
+
+<p>以上三个图都属于直角坐标系图标</p>
+<h2 id="6-直角坐标系图标配置"><a href="#6-直角坐标系图标配置" class="headerlink" title="6. 直角坐标系图标配置"></a>6. 直角坐标系图标配置</h2><h3 id="1-配置坐标系—–网格-grid"><a href="#1-配置坐标系—–网格-grid" class="headerlink" title="1. 配置坐标系—–网格 grid"></a>1. 配置坐标系—–网格 grid</h3><p>用来控制直角坐标系的布局和大小的</p>
+<p>显示grid </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//直角坐标网格</span></span><br><span class="line"><span class="attr">grid</span>: &#123;</span><br><span class="line">  <span class="attr">show</span>:<span class="literal">true</span>,   <span class="comment">//显示网格</span></span><br><span class="line">  <span class="attr">borderWidth</span>:<span class="number">10</span>,  <span class="comment">//边框宽度</span></span><br><span class="line">  <span class="attr">top</span>:<span class="number">50</span>,</span><br><span class="line">  <span class="attr">width</span>:<span class="number">300</span>,</span><br><span class="line">  <span class="attr">height</span>:<span class="number">100</span>,</span><br><span class="line">  <span class="attr">backgroundColor</span>:<span class="string">&#x27;orange&#x27;</span>,</span><br><span class="line">  <span class="attr">shadowColor</span>: <span class="string">&#x27;rgba(0, 0, 0, 0.5)&#x27;</span>,</span><br><span class="line">  <span class="attr">shadowBlur</span>: <span class="number">10</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-坐标轴-Axis"><a href="#2-坐标轴-Axis" class="headerlink" title="2. 坐标轴  Axis"></a>2. 坐标轴  Axis</h3><p>分为x轴和y轴</p>
+<ul>
+<li>type 类型  <ul>
+<li>category  值从本身的data中去寻找</li>
+<li>value       值从series的data中去寻找</li>
+</ul>
+</li>
+<li>position 显示位置<ul>
+<li>xAxis 可以取值为 top 或者 bottom</li>
+<li>yAxis 可以取值为 left 或者 right</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-区域缩放-dataZoom"><a href="#3-区域缩放-dataZoom" class="headerlink" title="3. 区域缩放   dataZoom"></a>3. 区域缩放   dataZoom</h3><p>x轴和y轴都可以使用</p>
+<p>是一个数组，可以配置多个缩放器</p>
+<p>option中直接写入</p>
+<ul>
+<li>Type 缩放效s ， 通过滑块还是滚轮</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dataZoom</span>:[</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">type</span>:<span class="string">&quot;inside&quot;</span>,   <span class="comment">//slider 通过滑块   inside 通过滚轮</span></span><br><span class="line">  &#125;</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>多个缩放，需要指明x轴还是y轴，用xAxisIndex:0   一般都给0</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dataZoom</span>:[</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">type</span>:<span class="string">&quot;slider&quot;</span>,   <span class="comment">//slider 通过滑块   inside 通过滚轮</span></span><br><span class="line">    <span class="attr">xAxisIndex</span>:<span class="number">0</span>     <span class="comment">//指明坐标轴</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">type</span>:<span class="string">&quot;slider&quot;</span>,   <span class="comment">//slider 通过滑块   inside 通过滚轮</span></span><br><span class="line">    <span class="attr">yAxisIndex</span>:<span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>指明出事状态的缩放情况</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dataZoom</span>:[</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">type</span>:<span class="string">&quot;slider&quot;</span>,   <span class="comment">//slider 通过滑块   inside 通过滚轮</span></span><br><span class="line">    <span class="attr">xAxisIndex</span>:<span class="number">0</span>     <span class="comment">//指明坐标轴</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">type</span>:<span class="string">&quot;slider&quot;</span>,   <span class="comment">//slider 通过滑块   inside 通过滚轮</span></span><br><span class="line">    <span class="attr">yAxisIndex</span>:<span class="number">0</span>,</span><br><span class="line">    <span class="attr">start</span>:<span class="number">10</span>,</span><br><span class="line">    <span class="attr">end</span>:<span class="number">50</span></span><br><span class="line">  &#125;</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-饼图"><a href="#7-饼图" class="headerlink" title="7. 饼图"></a>7. 饼图</h2><ul>
+<li><p>例如：明明一年买商品类型的开销 饼图能直观的看出占比特点</p>
+<ul>
+<li>情趣：5000。  生活：1200。 饮食3000。 衣服： 2000。 出行500</li>
+</ul>
+</li>
+<li><p>没有直角坐标系的图标</p>
+</li>
+</ul>
+<h3 id="1-代码结构"><a href="#1-代码结构" class="headerlink" title="1. 代码结构"></a>1. 代码结构</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> mc = echarts.<span class="title function_">init</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;box&#x27;</span>));</span><br><span class="line"><span class="comment">//必须得是name 和value</span></span><br><span class="line"><span class="keyword">let</span> data = [</span><br><span class="line">  &#123;<span class="attr">name</span>:<span class="string">&#x27;情趣&#x27;</span>,<span class="attr">value</span>:<span class="string">&quot;5000&quot;</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">name</span>:<span class="string">&#x27;av&#x27;</span>,<span class="attr">value</span>:<span class="string">&quot;1200&quot;</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">name</span>:<span class="string">&#x27;比基尼&#x27;</span>,<span class="attr">value</span>:<span class="string">&quot;3000&quot;</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">name</span>:<span class="string">&#x27;手指&#x27;</span>,<span class="attr">value</span>:<span class="string">&quot;500&quot;</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">name</span>:<span class="string">&#x27;饮食&#x27;</span>,<span class="attr">value</span>:<span class="string">&quot;2000&quot;</span>&#125;</span><br><span class="line">]</span><br><span class="line"><span class="comment">// 指定图表的配置项和数据</span></span><br><span class="line"><span class="keyword">var</span> option = &#123;</span><br><span class="line">  <span class="comment">//系列列表</span></span><br><span class="line">  <span class="attr">series</span>: [&#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;库存&#x27;</span>,</span><br><span class="line">    <span class="attr">type</span>: <span class="string">&#x27;pie&#x27;</span>,  <span class="comment">//bar就是柱状图  line 先行图   pie 饼状图</span></span><br><span class="line">    <span class="attr">data</span>: data</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 使用刚指定的配置项和数据显示图表。</span></span><br><span class="line">mc.<span class="title function_">setOption</span>(option);</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-常见效果"><a href="#2-常见效果" class="headerlink" title="2. 常见效果"></a>2. 常见效果</h3><ul>
+<li>label 控制显示文字 ，默认已经显示了，但是需要更详细的内容</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//系列列表</span></span><br><span class="line"><span class="attr">series</span>: [&#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;明明&#x27;</span>,</span><br><span class="line">  <span class="attr">type</span>: <span class="string">&#x27;pie&#x27;</span>,  <span class="comment">//bar就是柱状图  line 先行图   pie 饼状图</span></span><br><span class="line">  <span class="attr">data</span>: data,</span><br><span class="line">  <span class="attr">label</span>:&#123;</span><br><span class="line">    <span class="attr">show</span>:<span class="literal">true</span>,</span><br><span class="line">    <span class="comment">//formatter:&#x27;haha&#x27;</span></span><br><span class="line">    <span class="attr">formatter</span>:<span class="function">(<span class="params">r</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> r.<span class="property">name</span>+<span class="string">&quot;共&quot;</span>+r.<span class="property">value</span>+<span class="string">&quot;元，占&quot;</span>+r.<span class="property">percent</span>+<span class="string">&quot;%&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>radius 设置半径大小</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//一个值，单位px</span></span><br><span class="line"><span class="attr">radius</span>:<span class="number">30</span></span><br><span class="line"><span class="comment">//百分比</span></span><br><span class="line"><span class="attr">radius</span>:<span class="string">&quot;20%&quot;</span> <span class="comment">//百分比参照，宽度和高度较小的那个值的一半的百分比</span></span><br><span class="line"><span class="comment">//数组 代表内圆环和外圆环</span></span><br><span class="line"><span class="attr">radius</span>:[<span class="string">&#x27;50%&#x27;</span>,<span class="string">&quot;75%&quot;</span>]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>南丁格尔图</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//南丁格图：圆的每个半径大小随着百分比而改变</span></span><br><span class="line"><span class="attr">roseType</span>:<span class="string">&#x27;radius&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="8-地图"><a href="#8-地图" class="headerlink" title="8. 地图"></a>8. 地图</h2><ul>
+<li>需要json数据，直接从我网上下载就可以</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> data = 见数据</span><br><span class="line"><span class="comment">// 注册地图</span></span><br><span class="line">echarts.<span class="title function_">registerMap</span>(<span class="string">&quot;aa&quot;</span>,data);</span><br><span class="line"><span class="comment">//设置配置项</span></span><br><span class="line"><span class="keyword">var</span> option = &#123;</span><br><span class="line">  <span class="comment">//地图不用series ，用geo</span></span><br><span class="line">  <span class="attr">geo</span>:&#123;</span><br><span class="line">    <span class="attr">type</span>:<span class="string">&#x27;map&#x27;</span>,</span><br><span class="line">    <span class="attr">map</span>:<span class="string">&#x27;aa&#x27;</span>,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-geo-里面的其他取值"><a href="#1-geo-里面的其他取值" class="headerlink" title="1.geo 里面的其他取值"></a>1.geo 里面的其他取值</h3><ul>
+<li>允许缩放及拖动效果</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//允许缩放及拖动效果</span></span><br><span class="line"><span class="attr">roam</span>:<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示城市文字信息</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">label</span>:&#123;</span><br><span class="line">	<span class="attr">show</span>:<span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>初始化缩放比例</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设置初始化缩放比例</span></span><br><span class="line"><span class="attr">zoom</span>:<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>设置中心点</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">center</span>:[经度,纬度]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改选中时候的背景颜色</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">itemStyle</span>:&#123;</span><br><span class="line">  <span class="comment">//修改选中区域的背景颜色</span></span><br><span class="line">  <span class="attr">emphasis</span>:&#123;</span><br><span class="line">    <span class="attr">areaColor</span>:<span class="string">&#x27;green&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-根据数值，不同省份显示不同的颜色"><a href="#2-根据数值，不同省份显示不同的颜色" class="headerlink" title="2.根据数值，不同省份显示不同的颜色"></a>2.根据数值，不同省份显示不同的颜色</h3><ol>
+<li>显示中国地图</li>
+<li>设置省份，以及对应的值 {name:‘省份’，value:”值”}</li>
+<li>在series的data中设置省份和值 见json文件</li>
+<li>讲series和geo进行关联。   getIndex:0     type:’map’</li>
+<li>结合visualMap设置区间和样式。max min inRange calculable</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> value = json数据</span><br><span class="line"><span class="keyword">var</span> option = &#123;</span><br><span class="line">  <span class="attr">geo</span>:&#123;</span><br><span class="line">    <span class="attr">type</span>:<span class="string">&#x27;map&#x27;</span>,</span><br><span class="line">    <span class="attr">map</span>:<span class="string">&#x27;aa&#x27;</span>,</span><br><span class="line">    <span class="comment">//允许缩放及拖动效果</span></span><br><span class="line">    <span class="attr">roam</span>:<span class="literal">true</span>,</span><br><span class="line">    <span class="comment">//展示内容</span></span><br><span class="line">    <span class="attr">label</span>:&#123;</span><br><span class="line">      <span class="attr">show</span>:<span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//设置初始化缩放比例</span></span><br><span class="line">    <span class="attr">zoom</span>:<span class="number">2</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">series</span>:[</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">data</span>:value,</span><br><span class="line">      <span class="attr">geoIndex</span>:<span class="number">0</span>,</span><br><span class="line">      <span class="attr">type</span>:<span class="string">&#x27;map&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">visualMap</span>:&#123;</span><br><span class="line">    <span class="attr">min</span>:<span class="number">0</span>,			<span class="comment">//指定最小值</span></span><br><span class="line">    <span class="attr">max</span>:<span class="number">200</span>,     <span class="comment">//指定最大值</span></span><br><span class="line">    <span class="comment">//设置区间颜色渐变</span></span><br><span class="line">    <span class="attr">inRange</span>:&#123;</span><br><span class="line">      <span class="attr">color</span>:[<span class="string">&#x27;#fff&#x27;</span>,<span class="string">&quot;#ff0000&quot;</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//允许手动调整区间</span></span><br><span class="line">    <span class="attr">calculable</span>:<span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-地图和散点图相结合"><a href="#3-地图和散点图相结合" class="headerlink" title="3. 地图和散点图相结合"></a>3. 地图和散点图相结合</h3><ol>
+<li><p>给series添加散点图对象</p>
+</li>
+<li><p>设置散点图数据（坐标）city_san.json</p>
+</li>
+<li><p>处理数据变成 [{value:[坐标,坐标]},{value:[坐标,坐标]}]</p>
+</li>
+<li><p>配制出散点图 effectScatter</p>
+</li>
+<li><p>指定系列使用的坐标系，默认是2d坐标轴。 可选 coordinateSystem:”geo</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> dian = &#123;</span><br><span class="line">  <span class="string">&#x27;海门&#x27;</span>:[<span class="number">121.15</span>,<span class="number">31.89</span>],</span><br><span class="line">  <span class="string">&#x27;鄂尔多斯&#x27;</span>:[<span class="number">109.781327</span>,<span class="number">39.608266</span>],</span><br><span class="line">  <span class="string">&#x27;招远&#x27;</span>:[<span class="number">120.38</span>,<span class="number">37.35</span>],</span><br><span class="line">  <span class="string">&#x27;齐齐哈尔&#x27;</span>:[<span class="number">123.97</span>,<span class="number">47.33</span>],</span><br><span class="line">  <span class="string">&#x27;瓦房店&#x27;</span>:[<span class="number">121.979603</span>,<span class="number">39.627114</span>],</span><br><span class="line">  <span class="string">&#x27;即墨&#x27;</span>:[<span class="number">120.45</span>,<span class="number">36.38</span>],</span><br><span class="line">  <span class="string">&#x27;抚顺&#x27;</span>:[<span class="number">123.97</span>,<span class="number">41.97</span>],</span><br><span class="line">  <span class="string">&#x27;湖州&#x27;</span>:[<span class="number">120.1</span>,<span class="number">30.86</span>],</span><br><span class="line">  <span class="string">&#x27;汕头&#x27;</span>:[<span class="number">116.69</span>,<span class="number">23.39</span>],</span><br><span class="line">  <span class="string">&#x27;昆山&#x27;</span>:[<span class="number">120.95</span>,<span class="number">31.39</span>],</span><br><span class="line">  <span class="string">&#x27;长沙&#x27;</span>:[<span class="number">113</span>,<span class="number">28.21</span>],</span><br><span class="line">  <span class="string">&#x27;衢州&#x27;</span>:[<span class="number">118.88</span>,<span class="number">28.97</span>],</span><br><span class="line">  <span class="string">&#x27;廊坊&#x27;</span>:[<span class="number">116.7</span>,<span class="number">39.53</span>],</span><br><span class="line">  <span class="string">&#x27;菏泽&#x27;</span>:[<span class="number">115.480656</span>,<span class="number">35.23375</span>],</span><br><span class="line">  <span class="string">&#x27;合肥&#x27;</span>:[<span class="number">117.27</span>,<span class="number">31.86</span>],</span><br><span class="line">  <span class="string">&#x27;武汉&#x27;</span>:[<span class="number">114.31</span>,<span class="number">30.52</span>],</span><br><span class="line">  <span class="string">&#x27;大庆&#x27;</span>:[<span class="number">125.03</span>,<span class="number">46.58</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//处理数据</span></span><br><span class="line"><span class="keyword">let</span> arr = [];</span><br><span class="line"><span class="keyword">for</span> (key <span class="keyword">in</span> dian) &#123;</span><br><span class="line">  arr.<span class="title function_">push</span>(&#123;<span class="attr">value</span>:dian[key]&#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//series中写入～～～～～～～～～～～～～～～～～</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">d2ta</span>:arr,  <span class="comment">//指定散点图数据</span></span><br><span class="line">  <span class="attr">type</span>:<span class="string">&quot;effectScatter&quot;</span>,   <span class="comment">//涟漪形式的散点图</span></span><br><span class="line">  <span class="attr">coordinateSystem</span>:<span class="string">&#x27;geo&#x27;</span>,  <span class="comment">//坐标系指定成地图</span></span><br><span class="line">  <span class="attr">itemStyle</span>: &#123;</span><br><span class="line">    <span class="attr">color</span>: <span class="string">&#x27;#123456&#x27;</span>,</span><br><span class="line">    <span class="attr">shadowBlur</span>: <span class="number">10</span>,</span><br><span class="line">      <span class="attr">shadowColor</span>: <span class="string">&#x27;#333&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="9-雷达图"><a href="#9-雷达图" class="headerlink" title="9. 雷达图"></a>9. 雷达图</h2><h3 id="1-基本写法"><a href="#1-基本写法" class="headerlink" title="1. 基本写法"></a>1. 基本写法</h3><p>最常见的地方：王者荣耀个人属性</p>
+<p>例如，比较两个人的综合能力</p>
+<p>海峰：输出  69    生存	40 	团战	70	发育  89		KDA  40</p>
+<p>光哥：输出  90    生存	20 	团战	80	发育  50		KDA  70</p>
+<ul>
+<li>创建Echarts</li>
+<li>定义各个方向的最大值</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">indicator</span>:[</span><br><span class="line">	&#123;<span class="attr">name</span>:<span class="string">&quot;输出&quot;</span>,<span class="attr">max</span>:<span class="string">&quot;100&quot;</span>&#125;,</span><br><span class="line">	&#123;<span class="attr">name</span>:<span class="string">&quot;生存&quot;</span>,<span class="attr">max</span>:<span class="string">&quot;100&quot;</span>&#125;,</span><br><span class="line">	&#123;<span class="attr">name</span>:<span class="string">&quot;团战&quot;</span>,<span class="attr">max</span>:<span class="string">&quot;100&quot;</span>&#125;,</span><br><span class="line">	&#123;<span class="attr">name</span>:<span class="string">&quot;发育&quot;</span>,<span class="attr">max</span>:<span class="string">&quot;100&quot;</span>&#125;,</span><br><span class="line">	&#123;<span class="attr">name</span>:<span class="string">&quot;KDA&quot;</span>,<span class="attr">max</span>:<span class="string">&quot;100&quot;</span>&#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>准备每个个体的数据</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">data:[</span><br><span class="line">	&#123;name:&quot;海峰&quot;,value:[69,40,70,89,40]&#125;,</span><br><span class="line">	&#123;name:&quot;光哥&quot;,value:[90,20,80,50,70]&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>定义series</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type:&#x27;radar&#x27;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>实例</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> max = [</span><br><span class="line">  &#123;<span class="attr">name</span>:<span class="string">&quot;输出&quot;</span>,<span class="attr">max</span>:<span class="string">&quot;100&quot;</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">name</span>:<span class="string">&quot;生存&quot;</span>,<span class="attr">max</span>:<span class="string">&quot;100&quot;</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">name</span>:<span class="string">&quot;团战&quot;</span>,<span class="attr">max</span>:<span class="string">&quot;100&quot;</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">name</span>:<span class="string">&quot;发育&quot;</span>,<span class="attr">max</span>:<span class="string">&quot;100&quot;</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">name</span>:<span class="string">&quot;KDA&quot;</span>,<span class="attr">max</span>:<span class="string">&quot;100&quot;</span>&#125;,</span><br><span class="line">]</span><br><span class="line"><span class="keyword">let</span> d = [</span><br><span class="line">  &#123;<span class="attr">name</span>:<span class="string">&quot;海峰&quot;</span>,<span class="attr">value</span>:[<span class="number">69</span>,<span class="number">40</span>,<span class="number">70</span>,<span class="number">89</span>,<span class="number">40</span>]&#125;,</span><br><span class="line">  &#123;<span class="attr">name</span>:<span class="string">&quot;光哥&quot;</span>,<span class="attr">value</span>:[<span class="number">90</span>,<span class="number">20</span>,<span class="number">80</span>,<span class="number">50</span>,<span class="number">70</span>]&#125;</span><br><span class="line">] </span><br><span class="line"><span class="keyword">var</span> option = &#123;</span><br><span class="line">  <span class="attr">radar</span>:&#123;</span><br><span class="line">    <span class="attr">indicator</span>:max <span class="comment">//配置各个维度的最大值</span></span><br><span class="line">    <span class="attr">shape</span>:<span class="string">&quot;circle&quot;</span>   <span class="comment">//polygon 多边形  默认  circle</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">series</span>:[&#123;</span><br><span class="line">    <span class="attr">type</span>:<span class="string">&#x27;radar&#x27;</span>,</span><br><span class="line">    <span class="attr">name</span>:<span class="string">&quot;战况分析&quot;</span>,</span><br><span class="line">    <span class="attr">data</span>:d,</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-常用配置-写在series中"><a href="#2-常用配置-写在series中" class="headerlink" title="2. 常用配置 写在series中"></a>2. 常用配置 写在series中</h3><ul>
+<li>显示数值</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">label</span>:&#123;</span><br><span class="line">	<span class="attr">show</span>:<span class="literal">true</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示区域</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">areaStyle</span>:&#123;&#125;  <span class="comment">//配合这个，显示背景，效果更好</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="10-仪表盘"><a href="#10-仪表盘" class="headerlink" title="10. 仪表盘"></a>10. 仪表盘</h2><p>主要用于进度的监控</p>
+<h3 id="1-创建仪表盘"><a href="#1-创建仪表盘" class="headerlink" title="1.创建仪表盘"></a>1.创建仪表盘</h3><ul>
+<li>创建echarts</li>
+<li>准备数据，设置series中的data</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">data</span>:[&#123;<span class="attr">value</span>:<span class="number">97</span>&#125;]  <span class="comment">//[]的原因是可能存在多个指针</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>仪表盘图标类型</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">type</span>:<span class="string">&#x27;gauge&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> option = &#123;</span><br><span class="line"></span><br><span class="line">  <span class="attr">series</span>:[&#123;</span><br><span class="line">    <span class="attr">type</span>:<span class="string">&#x27;gauge&#x27;</span>,</span><br><span class="line">    <span class="attr">data</span>:[&#123;<span class="attr">value</span>:<span class="number">78</span>&#125;],</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-常用配置-series中写入"><a href="#2-常用配置-series中写入" class="headerlink" title="2. 常用配置 series中写入"></a>2. 常用配置 series中写入</h3><ul>
+<li><p>设置区间范围。</p>
+<p>max最大值 min最小值</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">max</span>:<span class="number">50</span></span><br><span class="line"><span class="attr">min</span>:<span class="number">110</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>多个指针，给data添加新的对象</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">data</span>:[</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">value</span>:<span class="number">78</span>,</span><br><span class="line">  	<span class="attr">itemStyle</span>:&#123;</span><br><span class="line">    	<span class="attr">color</span>:<span class="string">&quot;pink&quot;</span></span><br><span class="line">  	&#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;<span class="attr">value</span>:<span class="number">91</span>&#125;</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+
+<h2 id="11-主题"><a href="#11-主题" class="headerlink" title="11. 主题"></a>11. 主题</h2><h3 id="1-内置主题"><a href="#1-内置主题" class="headerlink" title="1. 内置主题"></a>1. 内置主题</h3><ul>
+<li>默认两套主题 light dark </li>
+<li>在init的时候，设置第二个参数 light 或 dark</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> mc = echarts.<span class="title function_">init</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;box&#x27;</span>),<span class="string">&#x27;dark&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-自定义主题"><a href="#2-自定义主题" class="headerlink" title="2. 自定义主题"></a>2. 自定义主题</h3><ul>
+<li><p>在主题编辑器中编辑主题 官网-&gt;下载-&gt;主题下载</p>
+</li>
+<li><p>编辑好后下载对应js文件</p>
+</li>
+<li><p>引入js文件</p>
+</li>
+<li><p>init的时候第二个参数写入对应主题的名字</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;zhuti.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="keyword">let</span> mc = echarts.<span class="title function_">init</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;box&#x27;</span>),<span class="string">&#x27;infographic&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>没有了~<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Echars/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Echars/">echars</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Vue02/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2022/09/19/Vue02/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue生命周期函数</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Vue02/">Vue生命周期函数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Vue框架//" class="article-tag-list-link color1">Vue框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Vue03/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Vue03/">Vue脚手架</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Vue框架//" class="article-tag-list-link color1">Vue框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Vue04/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Vue04/">Vuex</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Vue框架//" class="article-tag-list-link color1">Vue框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/git/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/git/">git语句</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Vue06/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Vue06/">Vue数据请求</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Vue框架//" class="article-tag-list-link color1">Vue框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/jq01/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/jq01/">jq01</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/jq部分//" class="article-tag-list-link color5">jq部分</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/Vue05/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/Vue05/">Vue路由</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Vue框架//" class="article-tag-list-link color1">Vue框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/jq02/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/jq02/">js02</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/jq部分//" class="article-tag-list-link color5">jq部分</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-photo">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/19/jq03/" class="archive-article-date">
-  	<time datetime="2022-09-19T05:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/19/jq03/">js03</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/jq部分//" class="article-tag-list-link color5">jq部分</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2022/page/2/">2</a><a class="page-number" href="/archives/2022/page/3/">3</a><a class="extend next" rel="next" href="/archives/2022/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -551,8 +668,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
